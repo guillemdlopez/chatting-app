@@ -18,5 +18,33 @@
   font-size: 20px;
   font-weight: 100;
   position: absolute;
-  right: 380px;
+  right: 370px;
+}
+
+#new-chat-form {
+  padding: 20px;
+  border-radius: 4px;
+
+  #chatroom_name,
+  #chatroom_description,
+  #chatroom_category {
+    background: #464a55;
+    border: none;
+    color: rgba(255, 255, 255, 0.7);
+
+    &::-webkit-input-placeholder {
+      font-size: 14px;
+    }
+  }
+  label {
+    font-weight: 100 !important;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 10px !important;
+  }
+}
+
+#chatroom_photo {
+  background: #36393f;
+  border: none;
+  color: #36393f;
 }
