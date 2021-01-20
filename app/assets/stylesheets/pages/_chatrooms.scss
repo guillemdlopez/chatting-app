@@ -1,0 +1,47 @@
+#chatbox {
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-messages {
+  flex-grow: 1;
+  overflow: auto !important;
+  height: 75vh;
+  padding: 10px;
+}
+
+.chat-messages::-webkit-scrollbar {
+  display: none;
+}
+
+.chat-message-form {
+  position: relative !important;
+}
+
+.chat-message-form input {
+  height: 50px;
+  border: 1px solid lightgray;
+  border-radius: 4px;
+}
+
+.submit {
+  height: 50px;
+  border: none;
+  margin-left: -6px;
+  border-radius: 0px 4px 4px 0px;
+  position: absolute;
+  top: 0px;
+  left: 94%;
+  height: 62px !important;
+  border: none !important;
+}
+
+.user-list {
+  display: block;
+  margin-bottom: 10px;
+}
+
+#username {
+  font-weight: 600;
+  font-size: small;
+}

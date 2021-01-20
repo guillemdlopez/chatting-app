@@ -1,0 +1,4 @@
+<div class="message <%= message.user == current_user ? 'text-right' : '' %>" id="message-<%=message.id%>">
+    <p class="mb-1" id="username"><%= message.user == current_user ? 'Me' : message.user.username %></p>
+    <p class="mb-4 <%= message.user == current_user ? 'green-back' : 'gray-back'%>" id="message-content"><%= message.body %><small id="time" class="font-weight-light text-muted ml-2"><%= message.created_at.strftime("%H:%M") %></small></p>
+</div>

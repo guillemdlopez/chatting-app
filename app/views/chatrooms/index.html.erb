@@ -1,0 +1,63 @@
+<div class="home-page d-flex">
+    <div id="sidebar-col">
+        <h4>Discover</h4>
+
+        <!--- CATEGORIES LIST PARTIAL -->
+        <%= render 'chatrooms/categories_list' %>
+
+    </div>
+
+    <!--- MAIN CONTENT -->
+    <div id="main-content-col">
+        <div class="banner text-center">
+            <h2 class="font-weight-bolder title-banner">Welcome back, <%= current_user.username %></h2>
+            <p class="banner-description font-weight-light">Chat with people all over the world about literally anything!</p>
+            <form class="banner-form d-flex justify-content-center align-items-center">
+                <input type="text" placeholder="Explore communities" class="px-3"> <button class="banner-form-btn"><i class="fas fa-search"></i></button>
+            </form>
+            <div class="d-flex justify-content-center mt-5">
+                <button class="create-chat-btn">Create a chat</button>
+                <button class="explore-btn">Explore</button>
+            </div>
+        </div>
+
+        <!-- NEWEST CHATROOM -->
+        <h5 class="font-weight-bolder mt-5">New communities</h5>
+        <%= link_to latest_chat do %>
+            <div class="latest-chat-card d-flex align-items-center">
+                <%= cl_image_tag latest_chat.photo.key %>
+
+                <p class="new-tag">NEW</p>
+                <div class="card-content w-50">
+                    <div class="chat-name d-flex align-items-center mb-3">
+                        <i class="fas fa-check-circle mr-2 tick-icon"></i>
+                        <p class="font-weight-bolder mb-0"><%= latest_chat.name %></p>
+                    </div>
+                    <div class="chat-description text-white-50">
+                        <p><%= latest_chat.description %></p>
+                    </div>
+
+                    <div class="card-tags mt-4">
+                        <p class="message-tag mr-2"><%= pluralize(latest_chat.messages.count, 'message') %></p>
+                        <p class="category-tag">#<%= latest_chat.category %></p>
+                    </div>
+                </div>
+
+            </div>
+        <% end %>
+        <!-- CHATROOM CARDS -->
+        <h5 class="font-weight-bolder mt-5 popular-communities">Popular communities</h5>
+        <div class="cards">
+            <% @chatrooms.sample(12).each do |chat| %>
+                <!--- PARTIAL CARDS --->
+                <%= render 'chatrooms/chat_cards', chat: chat %>
+            <% end %>
+        </div>
+
+        <div class="explore-more text-center mt-5">
+            <i class="fas fa-compass compass mb-2"></i>
+            <p class="mb-0">There are a lot more communities!</p>
+            <%= link_to "Let's explore.", root_path, class: 'text-primary' %>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,21 @@
+<ul class="category-list">
+    <% @CATEGORIES.each do |cat| %>
+        <% case cat %>
+            <% when 'programming' %>
+                <% icon = "<i class='fas fa-rocket mr-2'></i>".html_safe %>
+            <% when 'chatting' %>
+                <% icon = "<i class='fas fa-comments mr-2'></i>".html_safe %>
+            <% when 'gaming' %>
+                <% icon = "<i class='fas fa-gamepad mr-2'></i>".html_safe %>
+            <% when 'education' %>
+                <% icon = "<i class='fas fa-graduation-cap mr-2'></i>".html_safe %>
+            <% when 'music' %>
+                <% icon = "<i class='fas fa-music mr-2'></i>".html_safe %>
+            <% when 'entertainment' %>
+                <% icon = "<i class='fas fa-tv mr-2'></i>".html_safe %>
+            <% else %>
+                <% icon = '<i class="fas fa-mouse mr-2"></i>'.html_safe %>
+        <% end %>
+        <li class="category"><%= icon %><%= cat.capitalize %></li>
+    <% end %>
+</ul>

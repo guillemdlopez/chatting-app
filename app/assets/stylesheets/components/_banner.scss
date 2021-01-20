@@ -1,0 +1,25 @@
+.banner {
+  background-image: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.4) 100%,
+      rgba(0, 0, 0, 0.4) 100%
+    ),
+    url("https://miro.medium.com/max/3840/1*IpirmYjL3pYco0CO5TEQYw.png");
+  height: 60vh;
+  width: 100%;
+  background-size: cover;
+  background-position: bottom;
+  border-radius: 10px;
+  transition: background-image 0.5s;
+}
+
+.title-banner {
+  padding-top: 15%;
+}
+
+.banner-description {
+  font-size: 18px;
+}
+
+// FORM
+@import "form_banner";

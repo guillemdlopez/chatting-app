@@ -1,0 +1,65 @@
+#sidebar-col {
+  background: #1c1b29;
+  width: 15vw;
+  padding: 10px;
+
+  h4 {
+    padding: 10px 10px 0px 10px;
+    font-weight: bolder;
+  }
+
+  ul {
+    padding-left: 0px;
+  }
+
+  li:first-child {
+    margin-top: 20px;
+  }
+
+  ul li {
+    display: block;
+    margin-top: 5px;
+    cursor: pointer;
+    padding: 14px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.5);
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 4px;
+    }
+  }
+
+  .selected-cat {
+    background: #7289da;
+    color: white;
+    padding: 14px;
+    border-radius: 4px;
+  }
+}
+
+#main-content-col {
+  background: #292841;
+  height: 100vh;
+  padding: 40px;
+  overflow: scroll;
+  width: 85vw;
+}
+
+.home-page {
+  color: white;
+}
+
+.explore-more {
+  p {
+    font-weight: 600;
+  }
+  .compass {
+    font-size: 34px;
+  }
+}
+
+// NAVBAR //
+nav a {
+  color: white;
+}

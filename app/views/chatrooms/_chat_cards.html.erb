@@ -1,0 +1,17 @@
+<%= link_to chat do %>
+    <div class="chat-card">
+        <%= cl_image_tag chat.photo.key, class: 'chat-img' %>
+        <div class="card-content">
+            <%= cl_image_tag chat.photo.key, class: 'avatar-sm' %>
+            <div class="d-flex align-items-center mb-3">
+                <i class="fas fa-check-circle mr-2 tick-icon"></i>
+                <p class="font-weight-bolder mb-0"><%= chat.name %></p>
+            </div>
+            <p class="text-white-50 font-weight-regular"><%= chat.description.truncate(60) %></p>
+            <div class="card-tags mt-4">
+                <p class="message-tag"><small><%= pluralize(chat.messages.count, 'message') %></small></p>
+                <p class="category-tag"><small>#<%= chat.category %></small></p>
+            </div>
+        </div>
+    </div>
+<% end %>

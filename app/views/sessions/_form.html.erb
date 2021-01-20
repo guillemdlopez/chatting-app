@@ -1,0 +1,6 @@
+<%= simple_form_for :session, url: login_path do |f| %>
+    <%= f.input :username, label: 'Username' %>
+    <%= f.input :password, label: 'Password' %>
+    <small class="form-text text-muted">We'll never share your password with anyone else.</small>
+    <%= f.submit 'Login', class: 'btn btn-primary mt-3' %>
+<% end %>   
