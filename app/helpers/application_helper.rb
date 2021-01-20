@@ -1,4 +1,6 @@
 module ApplicationHelper
+    require 'date'
+    
     def get_chatrooms
         @chatrooms ||= Chatroom.all
     end

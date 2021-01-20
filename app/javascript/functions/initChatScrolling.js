@@ -2,7 +2,8 @@
 
 const initChatScrolling = (behavior = "auto") => {
   const chatroom = document.getElementById("messages");
-  if (chatroom) {
+  const messages = document.querySelectorAll(".message");
+  if (chatroom && messages.length > 1) {
     const lastMessage = document.querySelector(".message:last-child");
     lastMessage.scrollIntoView({ behavior });
   }

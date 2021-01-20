@@ -4,14 +4,18 @@ import consumer from "./consumer";
 const initChatroomCable = () => {
   const messagesContainer = document.getElementById("messages");
   if (messagesContainer) {
+    const id = document.getElementById("chatroom").dataset.chatroomId;
+
     consumer.subscriptions.create(
-      { channel: "ChatroomChannel" },
+      { channel: "ChatroomChannel", id: id },
       {
         received(data) {
           messagesContainer.insertAdjacentHTML("beforeend", data);
           initChatScrolling("smooth");
           const input = document.getElementById("message_body");
           input.value = "";
+          const submitBtn = document.querySelector(".submit");
+          submitBtn.style.opacity = "0.5";
         },
       }
     );

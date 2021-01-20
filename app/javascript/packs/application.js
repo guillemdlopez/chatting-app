@@ -19,6 +19,7 @@ import { selectCategory } from "../functions/selectCategory";
 import { hoverCategory } from "../functions/hoverCategory";
 import { scrollToCategories } from "../functions/scrollToCategories";
 import { changeBtnExplore } from "../functions/changeBtnExplore";
+import { submitBtnDisabled } from "../functions/submitBtnDisabled";
 
 // import "../../assets/stylesheets/application";
 
@@ -36,4 +37,5 @@ document.addEventListener("turbolinks:load", () => {
   // hoverCategory();
   scrollToCategories();
   changeBtnExplore();
+  submitBtnDisabled();
 });

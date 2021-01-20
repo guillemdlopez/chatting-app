@@ -1,14 +1,12 @@
-<h1><%= @chatroom.name %></h1>
-<div class="row mt-5" id=chatroom>
-    <div class="col-lg-2 col-sm-12 border rounded py-4 px-4">
-        <p class="mb-4">Users</p>
-        <% @users.each do |user| %>
-            <li class="user-list <%= user == current_user ? 'text-dark font-weight-bolder' : 'text-secondary' %>">
-                <%= user.username %>
-            </li>
-        <% end %>
+<div class="chatroom-page d-flex" id=chatroom data-chatroom-id="<%=@chatroom.id%>">
+    <div id="sidebar-col">
+        <%= cl_image_tag @chatroom.photo.key, class: 'chat-img' %>
+        <div class="name-description">
+            <h4><%= @chatroom.name %></h4> 
+            <p class="text-white-50 description"><%= @chatroom.description %></p>
+        </div>
     </div>
-    <div class="col-lg-10 col-sm-12" id="chatbox">
+    <div id="main-content-col" id="chatbox">
         <%# <h4 class="mb-2 py-4">Chatroom</h4> %>
         <div class="chat-messages" id="messages">
             <!--- MESSAGE LIST PARTIAL --->

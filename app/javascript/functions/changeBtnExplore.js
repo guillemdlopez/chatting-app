@@ -5,11 +5,11 @@ const changeBtnExplore = () => {
 
   if (exploreBtn) {
     exploreBtn.addEventListener("mouseover", (e) => {
-      console.log((e.target.innerHTML = "<i class='fas fa-arrow-down'></i>"));
+      e.target.innerHTML = "<i class='fas fa-arrow-down'></i>";
     });
 
     exploreBtn.addEventListener("mouseleave", (e) => {
-      console.log((e.target.innerHTML = "Explore"));
+      e.target.innerHTML = "Explore";
     });
   }
 };

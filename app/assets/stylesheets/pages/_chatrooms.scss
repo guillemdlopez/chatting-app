@@ -1,3 +1,32 @@
+.chatroom-page {
+  #main-content-col {
+    height: 93vh;
+    background: #36393f;
+    padding: 40px 20px;
+  }
+
+  #sidebar-col {
+    background: #2f3136;
+    padding: 0px;
+
+    h4 {
+      padding: 0px;
+    }
+
+    .description {
+      line-height: 24px;
+    }
+
+    .chat-img {
+      width: 100%;
+    }
+
+    .name-description {
+      padding: 20px;
+    }
+  }
+}
+
 #chatbox {
   display: flex;
   flex-direction: column;
@@ -6,8 +35,7 @@
 .chat-messages {
   flex-grow: 1;
   overflow: auto !important;
-  height: 75vh;
-  padding: 10px;
+  height: 70vh;
 }
 
 .chat-messages::-webkit-scrollbar {
@@ -28,12 +56,18 @@
   height: 50px;
   border: none;
   margin-left: -6px;
-  border-radius: 0px 4px 4px 0px;
+  border-radius: 0px 40px 40px 0px !important;
   position: absolute;
   top: 0px;
-  left: 94%;
-  height: 62px !important;
+  left: 95.4%;
+  height: 60px !important;
   border: none !important;
+  background: var(--green);
+  opacity: 0.5;
+
+  &:hover {
+    background: var(--green) !important;
+  }
 }
 
 .user-list {
@@ -44,4 +78,28 @@
 #username {
   font-weight: 600;
   font-size: small;
+}
+
+.username-current {
+  color: var(--green);
+}
+
+#message-content {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+#message_body {
+  background: #464a55;
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: 20px;
+  border: none;
+  border-radius: 40px;
+}
+
+.message:hover {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.message-input::-webkit-input-placeholder {
+  vertical-align: middle;
 }
