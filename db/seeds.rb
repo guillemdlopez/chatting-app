@@ -133,7 +133,7 @@ chatroom_8.photo.attach(io: image_8, filename: 'stevie_nicks.jpg', content_type:
 #######################################################
 
 # CHATROOM_9
-chatroom_9 = Chatroom.create!(name: 'POSE', category: 'entertainment', description: 'Are you obsessed with the show as wer are? Then you landed on the right spot! We watch together every single episode and discuss it afterwards.')
+chatroom_9 = Chatroom.create!(name: 'POSE', category: 'entertainment', description: 'Are you as obsessed with the show as wer are? Then you landed on the right spot! We watch together every single episode and discuss it afterwards.')
 
 # IMAGE CHATROOM_9
 image_9 = URI.open('https://images-na.ssl-images-amazon.com/images/I/A1vxgqF4I3L._RI_.jpg')
