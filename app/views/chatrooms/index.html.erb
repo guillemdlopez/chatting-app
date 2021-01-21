@@ -33,7 +33,9 @@
                     <input type="text" placeholder="Explore communities" class="px-3"> <button class="banner-form-btn"><i class="fas fa-search"></i></button>
                 </form>
                 <div class="d-flex justify-content-center mt-5">
-                    <button class="create-chat-btn">Create a chat</button>
+                    <%= link_to new_chatroom_path do %>
+                        <button class="create-chat-btn">Create a chat</button>
+                    <% end %>
                     <button class="explore-btn">Explore</button>
                 </div>
             </div>

@@ -6,10 +6,9 @@ const displayStatusMenu = () => {
 
   if (dropdownMenu) {
     userInfo.addEventListener("click", (e) => {
-      if (e.target.closest(".settings")) {
-        dropdownMenu.classList.toggle("totally-hidden");
-        dropdownMenu.style.transition = "0.3s";
-      }
+      if (!e.target.closest(".settings")) return;
+      dropdownMenu.classList.toggle("totally-hidden");
+      dropdownMenu.style.transition = "0.3s";
     });
 
     document.addEventListener("click", function (e) {

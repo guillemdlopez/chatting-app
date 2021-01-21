@@ -87,6 +87,7 @@
 
 .chat-message-form {
   position: relative !important;
+  width: 95% !important;
 }
 
 .chat-message-form input {
@@ -102,7 +103,7 @@
   border-radius: 0px 40px 40px 0px !important;
   position: absolute;
   top: 0px;
-  left: 94.9%;
+  left: 99.9%;
   height: 60px !important;
   border: none !important;
   background: var(--green);
@@ -136,7 +137,7 @@
   color: rgba(255, 255, 255, 0.7);
   margin-top: 20px;
   border: none;
-  border-radius: 40px;
+  border-radius: 40px 0px 0px 40px;
 }
 
 .message:hover {

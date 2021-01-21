@@ -66,13 +66,28 @@
   }
 
   .status {
-    color: var(--green);
     font-size: 18px;
     position: absolute;
     left: 40px;
     bottom: 8px;
     border: 3px solid #36393f;
     border-radius: 50%;
+  }
+
+  .status-online {
+    color: var(--green);
+  }
+
+  .status-offline {
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  .status-absent {
+    color: orange;
+  }
+
+  .status-idle {
+    color: purple;
   }
 
   .settings {
@@ -87,6 +102,11 @@
       background: rgba(255, 255, 255, 0.1);
     }
   }
+}
+
+.clicked-settings {
+  color: white;
+  background: rgba(255, 255, 255, 0.1);
 }
 
 #main-content-col {
