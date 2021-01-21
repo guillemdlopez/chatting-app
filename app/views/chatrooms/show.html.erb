@@ -4,9 +4,10 @@
     <div id="sidebar-nav" class="d-flex flex-column align-items-center">
         <%= link_to '<i class="fas fa-compass home-icon mt-2 pb-2"></i>'.html_safe, root_path %>
         <ul class="chat-imgs text-center flex-grow-1">
-            <%@chatrooms.sample(5).each do |chat| %>
+            <% @chatrooms.each do |chat| %>
                 <li class="d-flex align-items-center">
-                    <div class="chat-name-badge hidden mt-3" id="<%=chat.name%>">
+                    <div class="chat-name-badge hidden d-flex align-items-center mt-3" id="<%=chat.name%>">
+                        <i class="fas fa-check-circle tick-icon mr-2"></i>
                         <p class="mb-0"><%= chat.name %></p>
                     </div>
                     <%= link_to chat do %>

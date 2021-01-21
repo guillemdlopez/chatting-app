@@ -23,15 +23,18 @@
 
     <!--- MAIN CONTENT -->
     <div id="main-content-col">
+        <!-- BANNER -->
         <div class="banner text-center">
-            <h2 class="font-weight-bolder title-banner">Welcome back, <%= current_user.username %></h2>
-            <p class="banner-description font-weight-light">Chat with people all over the world about literally anything!</p>
-            <form class="banner-form d-flex justify-content-center align-items-center">
-                <input type="text" placeholder="Explore communities" class="px-3"> <button class="banner-form-btn"><i class="fas fa-search"></i></button>
-            </form>
-            <div class="d-flex justify-content-center mt-5">
-                <button class="create-chat-btn">Create a chat</button>
-                <button class="explore-btn">Explore</button>
+            <div class="banner-content">
+                <h2 class="font-weight-bolder title-banner">Welcome back, <%= current_user.username %></h2>
+                <p class="banner-description font-weight-light">Chat with people all over the world about literally anything!</p>
+                <form class="banner-form d-flex justify-content-center align-items-center">
+                    <input type="text" placeholder="Explore communities" class="px-3"> <button class="banner-form-btn"><i class="fas fa-search"></i></button>
+                </form>
+                <div class="d-flex justify-content-center mt-5">
+                    <button class="create-chat-btn">Create a chat</button>
+                    <button class="explore-btn">Explore</button>
+                </div>
             </div>
         </div>
 
@@ -40,8 +43,7 @@
         <%= link_to latest_chat do %>
             <div class="latest-chat-card d-flex align-items-center">
                 <%= cl_image_tag latest_chat.photo.key %>
-
-                <div class="card-content w-50 ml-2">
+                <div class="card-content w-50 ml-4">
                     <p class="new-tag">NEW</p>
                     <div class="chat-name d-flex align-items-center mb-3">
                         <i class="fas fa-check-circle mr-2 tick-icon"></i>
@@ -55,11 +57,11 @@
                         <p class="message-tag mr-2"><%= pluralize(latest_chat.messages.count, 'message') %></p>
                         <p class="category-tag">#<%= latest_chat.category %></p>
                     </div>
-                    <p class="text-white-50 mt-3"><small>Created <%= latest_chat.created_at.strftime("%d/%m/%y") %></small></p>
+                    <p class="text-white-50 mt-3 mb-0"><small>Created <%= latest_chat.created_at.strftime("%d/%m/%y") %></small></p>
                 </div>
-
             </div>
         <% end %>
+        
         <!-- CHATROOM CARDS -->
         <h5 class="font-weight-bolder mt-5 popular-communities">Popular communities</h5>
         <div class="cards">
@@ -75,16 +77,7 @@
             <%= link_to "Let's explore.", root_path, class: 'text-primary' %>
         </div>
 
-        <%= simple_form_for @chatroom, url: chatrooms_path, remote: true do |f| %>
-            <div class="row justify-content-center" id="new-chat-row">
-                <div class="col-lg-5" id="new-chat-form" style="background: #36393F">
-                    <%= f.input :name, label: 'NAME', placeholder: 'Forest Gump'%>
-                    <%= f.input :description, label: 'DESCRIPTION', placeholder: 'Are you a fan of Forest Gump? What are you waiting for? Join the chat group!' %>
-                    <%= f.input :category, collection: Chatroom::CATEGORIES, label: 'CATEGORY', placeholder: 'programming', include_blank: 'Select a category' %>
-                    <%= f.input :photo, as: :file, label: false, class: 'd-flex justify-content-center' %>
-                    <%= f.submit "Let's chat!", class: 'btn btn-create-chat w-100 mt-4' %>
-                </div>
-            </div>
-        <% end %>
+        <!-- NEW CHATROOM FORM -->
+        <%= render 'shared/form' %>
     </div>
 </div>
