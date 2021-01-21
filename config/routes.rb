@@ -12,13 +12,14 @@ Rails.application.routes.draw do
   post 'message', to: 'messages#create'
   get 'signup', to: 'users#new' 
 
-  resources :users, except: [:new] do
+  resources :users, except: [:show] do
     get 'online', to: 'users#online'
     get 'offline', to: 'users#offline'
     get 'idle', to: 'users#idle'
     get 'absent', to: 'users#absent'
     # get 'do not disturb', to: 'users#do_not_disturb'
   end
+  get '/:username', to: 'users#show'
 
   get '/chatrooms', to: 'pages#chatrooms', as: 'all_chats'
 end
