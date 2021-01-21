@@ -11,8 +11,12 @@ Rails.application.routes.draw do
   delete 'logout', to: 'sessions#destroy'
   post 'message', to: 'messages#create'
   get 'signup', to: 'users#new' 
-  # post 'signup', to: 'users#create'
-  resources :users, except: [:new]
 
-  get 'status', to: 'users#status'
+  resources :users, except: [:new] do
+    get 'online', to: 'users#online'
+    get 'offline', to: 'users#offline'
+    get 'idle', to: 'users#idle'
+    get 'abstent', to: 'users#absent'
+  end
+
 end

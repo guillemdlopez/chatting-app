@@ -30,4 +30,10 @@ button {
 .btn-create-chat {
   background: var(--lavender);
   color: white;
+  transition: 0.4s;
+
+  &:hover {
+    color: white;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2);
+  }
 }
