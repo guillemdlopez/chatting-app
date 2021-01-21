@@ -13,6 +13,12 @@ const displayChatName = () => {
       allBadges.forEach((badge) => badge.classList.add("hidden"));
       badge.classList.remove("hidden");
     });
+
+    chatList.addEventListener("mouseout", (e) => {
+      if (e.target.tagName !== "IMG") return;
+
+      allBadges.forEach((badge) => badge.classList.add("hidden"));
+    });
   }
 };
 
