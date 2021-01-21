@@ -1,4 +1,27 @@
 <div class="chatroom-page d-flex" id=chatroom data-chatroom-id="<%=@chatroom.id%>">
+
+    <!-- SIDEBAR NAV (1st) -->
+    <div id="sidebar-nav" class="d-flex flex-column align-items-center">
+        <%= link_to '<i class="fas fa-compass home-icon mt-2 pb-2"></i>'.html_safe, root_path %>
+        <ul class="chat-imgs text-center flex-grow-1">
+            <%@chatrooms.sample(5).each do |chat| %>
+                <li class="d-flex align-items-center">
+                    <div class="chat-name-badge hidden mt-3" id="<%=chat.name%>">
+                        <p class="mb-0"><%= chat.name %></p>
+                    </div>
+                    <%= link_to chat do %>
+                        <% if chat === @chatroom %>
+                            <% new_class = 'current-chat' %>
+                        <% end %>
+                        <%= cl_image_tag chat.photo.key, class: "avatar-sm mt-3 #{new_class}", data: { name: chat.name }%></li>
+                    <% end %>
+                </li>
+            <% end %>
+        </ul>
+        <%= link_to '<i class="fas fa-plus mb-4 plus-icon"></i>'.html_safe, new_chatroom_path %>
+    </div>
+
+    <!-- SIDEBAR COL (2nd) -->
     <div id="sidebar-col">
         <%= cl_image_tag @chatroom.photo.key, class: 'chat-img' %>
         <div class="name-description">
@@ -6,6 +29,8 @@
             <p class="text-white-50 description"><%= @chatroom.description %></p>
         </div>
     </div>
+
+    <!-- MAIN CONTENT COL (3rd) -->
     <div id="main-content-col" id="chatbox">
         <%# <h4 class="mb-2 py-4">Chatroom</h4> %>
         <div class="chat-messages" id="messages">

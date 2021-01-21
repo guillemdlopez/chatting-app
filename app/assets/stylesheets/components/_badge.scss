@@ -1,0 +1,25 @@
+.chat-name-badge {
+  z-index: 1;
+  position: absolute;
+  left: 90px;
+  padding: 10px;
+  background: black;
+  border-radius: 4px;
+}
+
+.hidden {
+  opacity: 0;
+}
+
+.messages-counter {
+  background: #ca130d;
+  border-radius: 50%;
+  width: 23px;
+  text-align: center;
+  font-weight: bold;
+  font-size: small;
+  border: 2px solid black;
+  position: absolute;
+  margin-bottom: 0px;
+  z-index: 1;
+}

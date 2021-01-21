@@ -1,8 +1,51 @@
 .chatroom-page {
+  #sidebar-nav {
+    width: 6vw;
+    background: #1e2023;
+
+    .home-icon {
+      font-size: 55px;
+      color: var(--lavender);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .chat-imgs {
+      padding-left: 0px;
+
+      li {
+        display: inline-flex;
+        align-items: flex-end;
+        justify-content: flex-end;
+      }
+    }
+
+    .avatar-sm:hover {
+      border-radius: 30%;
+    }
+
+    .plus-icon {
+      font-size: 55px;
+      color: var(--green);
+      font-weight: 100;
+      background: rgba(255, 255, 255, 0.07);
+      padding: 16px;
+      border-radius: 50%;
+      width: 53px;
+      transition: 0.3s;
+
+      &:hover {
+        background: var(--green);
+        color: white;
+        border-radius: 30%;
+      }
+    }
+  }
+
   #main-content-col {
     height: 93vh;
     background: #36393f;
     padding: 40px 20px;
+    width: 77vw;
   }
 
   #sidebar-col {
@@ -102,4 +145,9 @@
 
 .message-input::-webkit-input-placeholder {
   vertical-align: middle;
+}
+
+.current-chat {
+  border: 3px solid var(--lavender);
+  border-radius: 50%;
 }

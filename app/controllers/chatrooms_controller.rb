@@ -9,6 +9,7 @@ class ChatroomsController < ApplicationController
     end
 
     def show
+        @chatrooms = Chatroom.all.sample(5)
         @messages = @chatroom.messages.custom_display
         @message = Message.new
         @users = User.all

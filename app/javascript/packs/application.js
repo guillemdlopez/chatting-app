@@ -20,6 +20,7 @@ import { hoverCategory } from "../functions/hoverCategory";
 import { scrollToCategories } from "../functions/scrollToCategories";
 import { changeBtnExplore } from "../functions/changeBtnExplore";
 import { submitBtnDisabled } from "../functions/submitBtnDisabled";
+import { displayChatName } from "../functions/displayChatName";
 
 // import "../../assets/stylesheets/application";
 
@@ -39,4 +40,5 @@ document.addEventListener("turbolinks:load", () => {
   changeBtnExplore();
   submitBtnDisabled();
   selectHome();
+  displayChatName();
 });

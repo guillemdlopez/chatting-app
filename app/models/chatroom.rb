@@ -5,7 +5,6 @@ class Chatroom < ApplicationRecord
     CATEGORIES = %w(programming chatting gaming education music entertainment internet)
 
     validates :category, inclusion: { in: CATEGORIES }
-
     validates :name, presence: true, length: { minimum: 4, maximum: 30}
     validates :name, uniqueness: true
     validates :description, presence: true, length: { minimum: 10, maximum: 170 }
