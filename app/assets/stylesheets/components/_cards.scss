@@ -7,7 +7,7 @@
 
 .latest-chat-card {
   width: 100%;
-  border-radius: 4px;
+  border-radius: 8px;
   background: #36393f;
   margin-top: 40px;
   transition: all 0.4s;
@@ -17,8 +17,8 @@
 
   .new-tag {
     display: inline-block;
-    color: var(--green);
-    border: 1px solid var(--green);
+    color: var(--lavender);
+    border: 1px solid var(--lavender);
     padding: 10px 28px;
     border-radius: 22px;
     font-weight: 500;
@@ -31,8 +31,9 @@
   }
 
   img {
-    width: 50%;
+    width: 45%;
     border-radius: 4px 0px 0px 4px;
+    height: 100%;
   }
 }
 

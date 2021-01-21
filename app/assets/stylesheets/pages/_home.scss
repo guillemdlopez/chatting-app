@@ -30,18 +30,19 @@
     &:hover {
       background: rgba(255, 255, 255, 0.1);
       border-radius: 4px;
+      color: rgba(255, 255, 255, 0.7);
     }
   }
 
   .selected-cat {
-    background: #7289da;
+    background: var(--lavender);
     color: white;
     padding: 14px;
     border-radius: 4px;
   }
 
   .home-item {
-    background: #7289da;
+    background: var(--lavender);
     border-radius: 4px;
     color: white;
   }
@@ -58,7 +59,7 @@
   background: #36393f;
   width: inherit;
   padding: 10px;
-  font-weight: 500;
+  font-weight: 600;
 
   .avatar-xs {
     position: relative;
@@ -88,7 +89,7 @@
 #main-content-col {
   background: #292841;
   height: 100vh;
-  padding: 40px;
+  padding: 40px 40px 0px;
   overflow: scroll;
   width: 83vw;
 }
