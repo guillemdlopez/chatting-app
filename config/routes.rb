@@ -16,7 +16,9 @@ Rails.application.routes.draw do
     get 'online', to: 'users#online'
     get 'offline', to: 'users#offline'
     get 'idle', to: 'users#idle'
-    get 'abstent', to: 'users#absent'
+    get 'absent', to: 'users#absent'
+    # get 'do not disturb', to: 'users#do_not_disturb'
   end
 
+  get '/chatrooms', to: 'pages#chatrooms', as: 'all_chats'
 end

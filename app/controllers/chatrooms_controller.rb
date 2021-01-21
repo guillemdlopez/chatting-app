@@ -6,6 +6,7 @@ class ChatroomsController < ApplicationController
         @CATEGORIES = Chatroom::CATEGORIES
         @chatrooms = Chatroom.all
         @chatroom = Chatroom.new
+        @status = User::STATUS.reject {|st| st == current_user.status}
     end
 
     def show

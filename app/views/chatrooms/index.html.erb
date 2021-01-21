@@ -13,12 +13,13 @@
         <div class="user-info d-flex align-items-center">
             <%= cl_image_tag current_user.avatar.key, class: 'avatar-xs mr-3' %>
             <div class="username-avatar flex-grow-1">
-                <i class="fas fa-circle status"></i>
+                <i class="fas fa-circle status status-<%=current_user.status%>"></i>
                 <p class="mb-0"><%= current_user.username %></p>
                 <p class="text-white-50 mb-0"><small>#<%= current_user.id %></small></p>
             </div>
             <i class="fas fa-cog settings"></i>
         </div>
+        <%= render 'chatrooms/dropdown' %>
     </div>
 
     <!--- MAIN CONTENT -->

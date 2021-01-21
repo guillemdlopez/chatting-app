@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-    helper_method :current_user, :logged_in?
+    helper_method :current_user, :logged_in?, :is_online?
 
     def current_user
         @current_user ||= User.find(session[:user_id]) if session[:user_id]
@@ -14,5 +14,9 @@ class ApplicationController < ActionController::Base
             flash[:alert] = 'You must be logged in to perform that action'
             redirect_to login_path
         end
-    end 
+    end
+
+    def is_online?(user)
+        user.status == 'online'
+    end
 end

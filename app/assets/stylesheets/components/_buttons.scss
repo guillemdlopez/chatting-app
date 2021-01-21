@@ -37,3 +37,15 @@ button {
     box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2);
   }
 }
+
+.nav-logout {
+  border: 1px solid var(--lavender) !important;
+  color: var(--lavender);
+  padding: 9px 27px !important;
+  border-radius: 32px !important;
+
+  &:hover {
+    background: var(--lavender) !important;
+    color: white !important;
+  }
+}

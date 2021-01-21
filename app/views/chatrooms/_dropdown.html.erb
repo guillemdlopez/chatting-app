@@ -1,0 +1,36 @@
+<div class="dropdown-user-status totally-hidden">
+    <div class="dropwdown-menu">
+        <ul class="all_status">
+            <li class="d-flex align-items-center current_status">
+                <i class="fas fa-circle status-<%=current_user.status%> mr-2"></i>
+                <p class="mb-0"><%= current_user.status.capitalize %></p>
+            </li>
+            <li>
+                <%= link_to user_offline_path(current_user) do %>
+                    <i class="fas fa-circle status-offline mr-2"></i>
+                    Offline
+                <% end %>
+            </li>
+            <li>
+                <%= link_to user_absent_path(current_user) do %>
+                    <i class="fas fa-circle status-absent mr-2"></i>
+                    Absent
+                <% end %>
+            </li>
+            <li>
+                <%= link_to user_idle_path(current_user) do %>
+                    <i class="fas fa-circle status-idle mr-2"></i>
+                    Idle
+                <% end %>
+            </li>
+            <% if current_user.status != 'online' %>
+                <li>
+                    <%= link_to user_online_path(current_user) do %>
+                        <i class="fas fa-circle status-online mr-2"></i>
+                        Online
+                    <% end %>
+                </li>
+            <% end %>
+        </ul>
+    </div>
+</div>

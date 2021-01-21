@@ -21,6 +21,7 @@ import { scrollToCategories } from "../functions/scrollToCategories";
 import { changeBtnExplore } from "../functions/changeBtnExplore";
 import { submitBtnDisabled } from "../functions/submitBtnDisabled";
 import { displayChatName } from "../functions/displayChatName";
+import { displayStatusMenu } from "../functions/displayStatusMenu";
 
 // import "../../assets/stylesheets/application";
 
@@ -41,4 +42,5 @@ document.addEventListener("turbolinks:load", () => {
   submitBtnDisabled();
   selectHome();
   displayChatName();
+  displayStatusMenu();
 });
