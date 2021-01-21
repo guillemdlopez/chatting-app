@@ -13,6 +13,7 @@
   transition: all 0.4s;
   position: relative;
   overflow: hidden;
+  height: 43%;
 
   .new-tag {
     display: inline-block;
@@ -30,7 +31,7 @@
   }
 
   img {
-    width: 44.5%;
+    width: 50%;
     border-radius: 4px 0px 0px 4px;
   }
 }

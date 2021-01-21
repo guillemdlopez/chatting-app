@@ -7,4 +7,8 @@ class User < ApplicationRecord
     has_many :messages, dependent: :destroy
 
     has_one_attached :avatar
+
+    STATUS = ['online', 'offline', 'absent', 'do not disturb', 'idle']
+
+    validates :status, inclusion: { in: STATUS }
 end

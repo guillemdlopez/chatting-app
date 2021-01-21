@@ -2,7 +2,7 @@ require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
   def setup
-    @user = User.create(username: 'Guillem', password: 'password')
+    @user = User.create!(username: 'Guillem', password: 'password', status: 'online')
   end
 
   test 'should be able to create a User' do
@@ -17,6 +17,12 @@ class UserTest < ActiveSupport::TestCase
 
   test 'should not accept short username' do
     @user.username = 'G'
+
+    assert_not @user.valid?
+  end
+
+  test 'should not validate a wrong status' do
+    @user.status = 'at work'
 
     assert_not @user.valid?
   end

@@ -1,10 +1,22 @@
 <div class="home-page d-flex">
     <div id="sidebar-col">
-        <h4>Discover</h4>
-
-        <!--- CATEGORIES LIST PARTIAL -->
-        <%= render 'chatrooms/categories_list' %>
-
+        <div class="menu">
+            <h4>Discover</h4>
+            <div class="d-flex align-items-center home-item mt-3">
+                <i class="fas fa-compass"></i>
+                <p class="mb-0 ml-2">Home</p>
+            </div>
+            <!--- CATEGORIES LIST PARTIAL -->
+            <%= render 'chatrooms/categories_list' %>
+        </div>
+        <div class="user-info d-flex align-items-center justify-content-between">
+            <div class="username-avatar">
+                <%= cl_image_tag current_user.avatar.key, class: 'avatar-xs' %>
+                <i class="fas fa-circle status"></i>
+                <%= current_user.username %>
+            </div>
+            <i class="fas fa-cog settings"></i>
+        </div>
     </div>
 
     <!--- MAIN CONTENT -->
@@ -41,7 +53,7 @@
                         <p class="message-tag mr-2"><%= pluralize(latest_chat.messages.count, 'message') %></p>
                         <p class="category-tag">#<%= latest_chat.category %></p>
                     </div>
-                    <p class="text-white-50 mt-3"><small>Created <%= latest_chat.created_at.strftime("%u/%m/%y") %></small></p>
+                    <p class="text-white-50 mt-3"><small>Created <%= latest_chat.created_at.strftime("%d/%m/%y") %></small></p>
                 </div>
 
             </div>

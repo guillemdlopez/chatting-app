@@ -15,7 +15,7 @@ import "@fortawesome/fontawesome-free/js/all";
 
 import { initChatroomCable } from "../channels/chatroom_channel";
 import { initChatScrolling } from "../functions/initChatScrolling";
-import { selectCategory } from "../functions/selectCategory";
+import { selectCategory, selectHome } from "../functions/selectCategory";
 import { hoverCategory } from "../functions/hoverCategory";
 import { scrollToCategories } from "../functions/scrollToCategories";
 import { changeBtnExplore } from "../functions/changeBtnExplore";
@@ -38,4 +38,5 @@ document.addEventListener("turbolinks:load", () => {
   scrollToCategories();
   changeBtnExplore();
   submitBtnDisabled();
+  selectHome();
 });

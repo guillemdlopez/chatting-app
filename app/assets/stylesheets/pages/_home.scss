@@ -1,7 +1,12 @@
 #sidebar-col {
   background: #1c1b29;
   width: 17vw;
-  padding: 10px;
+  display: flex;
+  flex-direction: column;
+
+  .menu {
+    padding: 10px;
+  }
 
   h4 {
     padding: 10px 10px 0px 10px;
@@ -12,11 +17,9 @@
     padding-left: 0px;
   }
 
-  li:first-child {
-    margin-top: 20px;
-  }
-
-  ul li {
+  ul li,
+  .home-item {
+    font-size: 15px;
     display: block;
     margin-top: 5px;
     cursor: pointer;
@@ -35,6 +38,50 @@
     color: white;
     padding: 14px;
     border-radius: 4px;
+  }
+
+  .home-item {
+    background: #7289da;
+    border-radius: 4px;
+    color: white;
+  }
+
+  .unselected {
+    background: none;
+    color: rgba(255, 255, 255, 0.5);
+  }
+}
+
+.user-info {
+  position: fixed;
+  bottom: 0px;
+  background: #36393f;
+  width: inherit;
+  padding: 10px;
+  font-weight: 500;
+
+  .avatar-xs {
+    position: relative;
+  }
+
+  .status {
+    color: var(--green);
+    font-size: 16px;
+    position: absolute;
+    left: 40px;
+    bottom: 8px;
+    border: 2px solid black;
+    border-radius: 50%;
+  }
+
+  .settings {
+    font-size: 20px;
+    color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+
+    &:hover {
+      color: white;
+    }
   }
 }
 

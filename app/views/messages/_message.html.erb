@@ -2,7 +2,7 @@
     <%= cl_image_tag message.user.avatar.key, class: 'avatar-xs mr-2 ml-1' %>
     <div class="message-content">
         <div class="d-flex align-items-center username-time mb-1">
-            <p class="mb-0 <%= message.user == current_user ? 'username-current' : '' %>" id="username"><%= message.user == current_user ? 'Me' : message.user.username %></p><small id="time" class="font-weight-light text-muted ml-2"><%= message.created_at.strftime("%u/%m/%y") == Date.today.strftime("%u/%m/%y") ? 'today at ' + message.created_at.strftime("%H:%M") : message.created_at == Date.yesterday.strftime("%u/%m/%y") ? 'yesterday at ' + message.created_at.strftime("%H:%M") : message.created_at.strftime("%u/%m/%y")%></small>
+            <p class="mb-0 <%= message.user == current_user ? 'username-current' : '' %>" id="username"><%= message.user == current_user ? 'Me' : message.user.username %></p><small id="time" class="font-weight-regular text-muted ml-2"><%= message.created_at.strftime("%d/%m/%y") == Date.today.strftime("%d/%m/%y") ? 'today at ' + message.created_at.strftime("%H:%M") : message.created_at.strftime("%d/%m/%y") == Date.yesterday.strftime("%d/%m/%y") ? 'yesterday at ' + message.created_at.strftime("%H:%M") : message.created_at.strftime("%d/%m/%y")%></small>
         </div>
         <p class="mb-0" id="message-content"><%= message.body %></p>
     </div>
