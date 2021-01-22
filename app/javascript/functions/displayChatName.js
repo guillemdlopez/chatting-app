@@ -10,14 +10,14 @@ const displayChatName = () => {
       const chatName = e.target.dataset.name;
       const badge = document.getElementById(`${chatName}`);
 
-      allBadges.forEach((badge) => badge.classList.add("hidden"));
-      badge.classList.remove("hidden");
+      allBadges.forEach((badge) => badge.classList.add("totally-hidden"));
+      badge.classList.remove("totally-hidden");
     });
 
     chatList.addEventListener("mouseout", (e) => {
       if (e.target.tagName !== "IMG") return;
 
-      allBadges.forEach((badge) => badge.classList.add("hidden"));
+      allBadges.forEach((badge) => badge.classList.add("totally-hidden"));
     });
   }
 };

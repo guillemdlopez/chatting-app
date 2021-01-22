@@ -6,7 +6,7 @@
         <ul class="chat-imgs text-left flex-grow-1">
             <% @chatrooms.each do |chat| %>
                 <li class="d-flex align-items-center mt-3" id="chat-item">
-                    <div class="chat-name-badge hidden d-flex align-items-center" id="<%=chat.name%>">
+                    <div class="chat-name-badge totally-hidden d-flex align-items-center" id="<%=chat.name%>">
                         <i class="fas fa-check-circle tick-icon mr-2"></i>
                         <p class="mb-0"><%= chat.name %></p>
                     </div>
