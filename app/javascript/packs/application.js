@@ -23,6 +23,7 @@ import { submitBtnDisabled } from "../functions/submitBtnDisabled";
 import { displayChatName } from "../functions/displayChatName";
 import { displayStatusMenu } from "../functions/displayStatusMenu";
 import { displayMessageForm } from "../functions/displayMessageForm";
+import { closeAlert } from "../functions/closeAlert";
 
 // import "../../assets/stylesheets/application";
 
@@ -45,4 +46,5 @@ document.addEventListener("turbolinks:load", () => {
   displayChatName();
   displayStatusMenu();
   displayMessageForm();
+  closeAlert();
 });

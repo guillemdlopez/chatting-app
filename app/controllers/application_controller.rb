@@ -21,7 +21,11 @@ class ApplicationController < ActionController::Base
     end
 
     def new_user_online
-        user = User.find_by(username: params[:session][:username])
-        user != current_user && user.is_online?
+        users = User.all
+        new_user = nil
+        users.each do |user|
+            @new_user ||= user if user != current_user && is_online?(user)
+        end
+        @new_user
     end
 end
