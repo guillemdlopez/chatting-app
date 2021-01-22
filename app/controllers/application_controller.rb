@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-    helper_method :current_user, :logged_in?, :is_online?
+    helper_method :current_user, :logged_in?, :is_online?, :new_user_online
 
     def current_user
         @current_user ||= User.find(session[:user_id]) if session[:user_id]
@@ -18,5 +18,10 @@ class ApplicationController < ActionController::Base
 
     def is_online?(user)
         user.status == 'online'
+    end
+
+    def new_user_online
+        user = User.find_by(username: params[:session][:username])
+        user != current_user && user.is_online?
     end
 end

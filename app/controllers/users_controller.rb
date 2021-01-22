@@ -6,6 +6,10 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
+  def show
+    @user = User.find_by(username: params[:username])
+  end
+
   def create
     @user = User.new(user_params)
 
@@ -46,6 +50,8 @@ class UsersController < ApplicationController
     end
 
   private
+
+  
 
   def find_user
     @user = User.find(params[:user_id])

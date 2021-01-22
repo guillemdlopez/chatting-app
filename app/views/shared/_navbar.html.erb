@@ -22,6 +22,7 @@
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Profile </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <%= link_to 'Profile', profile_path(current_user.username), class: 'dropdown-item' %>
                         <% if logged_in? %>
                             <%= link_to 'Logout', logout_path, method: :delete, class: 'dropdown-item' %>
                         <% else %>

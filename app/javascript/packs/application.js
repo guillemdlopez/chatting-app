@@ -22,6 +22,7 @@ import { changeBtnExplore } from "../functions/changeBtnExplore";
 import { submitBtnDisabled } from "../functions/submitBtnDisabled";
 import { displayChatName } from "../functions/displayChatName";
 import { displayStatusMenu } from "../functions/displayStatusMenu";
+import { displayMessageForm } from "../functions/displayMessageForm";
 
 // import "../../assets/stylesheets/application";
 
@@ -43,4 +44,5 @@ document.addEventListener("turbolinks:load", () => {
   selectHome();
   displayChatName();
   displayStatusMenu();
+  displayMessageForm();
 });

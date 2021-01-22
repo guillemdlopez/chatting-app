@@ -1,5 +1,9 @@
 .totally-hidden {
-  transform: translateY(14px);
+  transform: translateY(-20px);
   visibility: hidden;
+  opacity: 0;
+}
+
+.hidden {
   opacity: 0;
 }

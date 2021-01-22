@@ -7,6 +7,11 @@
   width: 400px;
   border-radius: 4px;
   border: none;
+  transition: 0.3s;
+
+  &:hover {
+    box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.5);
+  }
 }
 
 .banner-form-btn {
@@ -57,4 +62,14 @@
   border: none;
   color: #36393f;
   margin-top: 40px;
+}
+
+#new-chatroom-page {
+  #new_chatroom {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position-x: right;
+    background-position-y: top;
+    margin-top: 0px;
+  }
 }

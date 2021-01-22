@@ -74,6 +74,7 @@
     border-radius: 50%;
   }
 
+  // STATUS //
   .status-online {
     color: var(--green);
   }
@@ -100,6 +101,15 @@
     &:hover {
       color: white;
       background: rgba(255, 255, 255, 0.1);
+    }
+  }
+
+  .link-profile {
+    display: inline-block;
+    transition: 0.3s;
+
+    &:hover {
+      transform: translateY(-2px);
     }
   }
 }

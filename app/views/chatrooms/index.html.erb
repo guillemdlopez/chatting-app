@@ -14,16 +14,20 @@
             <%= cl_image_tag current_user.avatar.key, class: 'avatar-xs mr-3' %>
             <div class="username-avatar flex-grow-1">
                 <i class="fas fa-circle status status-<%=current_user.status%>"></i>
-                <p class="mb-0"><%= current_user.username %></p>
+                <%= link_to profile_path(current_user.username) do %>
+                    <p class="mb-0 link-profile"><%= current_user.username %></p>
+                <% end %>
                 <p class="text-white-50 mb-0"><small>#<%= current_user.id %></small></p>
             </div>
             <i class="fas fa-cog settings"></i>
         </div>
+        <!-- DROPDOWN PARTIAL -->
         <%= render 'chatrooms/dropdown' %>
     </div>
 
     <!--- MAIN CONTENT -->
     <div id="main-content-col">
+        <%= if new_user_online %>
         <!-- BANNER -->
         <div class="banner text-center">
             <div class="banner-content">
@@ -46,7 +50,7 @@
         <%= link_to latest_chat do %>
             <div class="latest-chat-card d-flex align-items-center">
                 <%= cl_image_tag latest_chat.photo.key %>
-                <div class="card-content w-50 ml-4">
+                <div class="card-content w-50">
                     <p class="new-tag">NEW</p>
                     <div class="chat-name d-flex align-items-center mb-3">
                         <i class="fas fa-check-circle mr-2 tick-icon"></i>
@@ -69,7 +73,7 @@
         <h5 class="font-weight-bolder mt-5 popular-communities">Popular communities</h5>
         <div class="cards">
             <% @chatrooms.sample(12).each do |chat| %>
-                <!--- PARTIAL CARDS --->
+                <!--- CARDS GRID PARTIAL --->
                 <%= render 'chatrooms/chat_cards', chat: chat %>
             <% end %>
         </div>
@@ -77,10 +81,20 @@
         <div class="explore-more text-center mt-5">
             <i class="fas fa-compass compass mb-2"></i>
             <p class="mb-0">There are a lot more communities!</p>
-            <%= link_to "Let's explore.", root_path, class: 'text-primary' %>
+            <%= link_to "Let's explore.", all_chats_path, class: 'text-primary' %>
         </div>
 
         <!-- NEW CHATROOM FORM -->
-        <%= render 'shared/form' %>
+       <%= simple_form_for @chatroom, url: chatrooms_path, remote: true do |f| %>
+            <div class="row justify-content-center" id="new-chat-row">
+                <div class="col-lg-5" id="new-chat-form" style="background: #36393F">
+                    <%= f.input :name, label: 'NAME', placeholder: 'Forest Gump'%>
+                    <%= f.input :description, label: 'DESCRIPTION', placeholder: 'Are you a fan of Forest Gump? What are you waiting for? Join the chat group!' %>
+                    <%= f.input :category, collection: Chatroom::CATEGORIES, label: 'CATEGORY', placeholder: 'programming', include_blank: 'Select a category' %>
+                    <%= f.input :photo, as: :file, label: false, class: 'd-flex justify-content-center' %>
+                    <%= f.submit "Let's chat!", class: 'btn btn-create-chat w-100 mt-4' %>
+                </div>
+            </div>
+        <% end %>
     </div>
 </div>

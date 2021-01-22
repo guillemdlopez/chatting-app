@@ -3,3 +3,15 @@
   position: fixed;
   width: 100%;
 }
+
+.alert-success {
+  background: var(--green) !important;
+  color: white !important;
+  border: 2px solid rgba(255, 255, 255, 0.7);
+}
+
+.alert-warning {
+  background: var(--orange) !important;
+  color: white !important;
+  border: 2px solid rgba(255, 255, 255, 0.7);
+}

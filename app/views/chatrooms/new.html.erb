@@ -1,1 +1,31 @@
-<h1>New chatroom form</h1>
+<body id="new-chatroom-page" style="background: #36393F">
+    <div class="container">
+        <h1 class="font-weight-bolder mt-5" style="color: var(--green)">Let's chat</h1>
+        <%= simple_form_for @chatroom, url: chatrooms_path, remote: true do |f| %>
+            <div class="row justify-content-between align-items-end" id="new-chat-row-new-page">
+                <div class="col-lg-5" id="new-chat-form" style="background: #36393F">
+                    <%= f.input :name, label: 'NAME', placeholder: 'Forest Gump'%>
+                    <%= f.input :description, label: 'DESCRIPTION', placeholder: 'Are you a fan of Forest Gump? What are you waiting for? Join the chat group!' %>
+                    <%= f.input :category, collection: Chatroom::CATEGORIES, label: 'CATEGORY', placeholder: 'programming', include_blank: 'Select a category' %>
+                    <%= f.input :photo, as: :file, label: false, class: 'd-flex justify-content-center' %>
+                    <%= f.submit "Let's chat!", class: 'btn btn-create-chat w-100 mt-4' %>
+                </div>
+
+                <div class="col-lg-4 totally-hidden" id="create-community">
+                    <h3 class="font-weight-bolder mb-3">Create your community</h3>
+                    <p class="mb-4 text-light">Create a server and start chatting with people all over the world right away!
+                    For the moment, there are only the following categories: </p>
+                    <ul class="list-categories">
+                        <li>Programming</li>
+                        <li>Chatting</li>
+                        <li>Gaming</li>
+                        <li>Education</li>
+                        <li>Music</li>
+                        <li>Entertainment</li>
+                        <li>Internet</li>
+                    </ul>
+                </div>
+            </div>
+        <% end %>
+    </div>
+</body>

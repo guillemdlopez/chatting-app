@@ -9,7 +9,6 @@ class SessionsController < ApplicationController
       user = User.find_by(username: params[:session][:username])
       if user && user.authenticate(params[:session][:password])
         session[:user_id] = user.id
-        # user.status = 'online'
         flash[:notice] = "You have successfully logged in"
         redirect_to root_path
       else
@@ -28,9 +27,10 @@ class SessionsController < ApplicationController
     private
 
     def online_status
-      current_user.status = 'online'
-
-      current_user.save
+      if !!current_user
+        current_user.status = 'online'
+        current_user.save
+      end
     end
 
     def offline_status

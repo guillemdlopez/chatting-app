@@ -4,13 +4,25 @@
     background: #1e2023;
 
     .home-icon {
-      font-size: 55px;
+      font-size: 70px;
       color: var(--lavender);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      background: rgba(255, 255, 255, 0.07);
+      margin-bottom: 20px;
+      padding: 10px;
+      border-radius: 50%;
+      transition: 0.3s;
+
+      &:hover {
+        transform: scale(0.9);
+        border-radius: 30%;
+        background: var(--lavender);
+        color: white;
+      }
     }
 
     .chat-imgs {
       padding-left: 0px;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
 
       li {
         display: inline-flex;
@@ -151,4 +163,41 @@
 .current-chat {
   border: 3px solid var(--lavender);
   border-radius: 50%;
+}
+
+// NEW CHATROOM PAGE
+#create-community {
+  border-radius: 8px;
+  background: var(--green);
+  box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.7);
+  padding: 30px;
+  width: 100%;
+  color: white;
+  height: fit-content;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 29%;
+  border: 2px solid white;
+  transition: 0.5s;
+
+  .list-categories {
+    padding-left: 0px;
+    text-align: center;
+    margin-bottom: 0px;
+
+    li {
+      display: inline-block;
+      background: white;
+      color: var(--green);
+      padding: 4px 10px;
+      border-radius: 20px;
+      margin-right: 4px;
+      margin-top: 10px;
+    }
+
+    li:last-child {
+      margin-right: 0px;
+    }
+  }
 }

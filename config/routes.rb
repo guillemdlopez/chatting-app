@@ -19,7 +19,7 @@ Rails.application.routes.draw do
     get 'absent', to: 'users#absent'
     # get 'do not disturb', to: 'users#do_not_disturb'
   end
-  get '/:username', to: 'users#show'
+  get '/:username', to: 'users#show', as: 'profile'
 
   get '/chatrooms', to: 'pages#chatrooms', as: 'all_chats'
 end
