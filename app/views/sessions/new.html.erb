@@ -1,15 +1,13 @@
-<main>
-    <div class="container">
-        <h1 class="mt-5">Log in</h1>
-
-        <div class="row justify-content-md-center mt-5" id="login-form">
-            <div class="col-lg-6 py-5 px-5 border-right">
-                <!--- LOGIN FORM --->
-                <%= render 'sessions/form' %>
-            </div>
-            <div class="col-lg-6 d-flex justify-content-center align-items-center">
-                <%= link_to 'Sign Up', signup_path, class: 'btn btn-primary w-25 sign-up-btn' %>
+<body id="login-page">
+    <main>
+        <div class="container">
+            <h1 class="mt-5 login-title">Log in</h1>
+            <div class="row justify-content-start mt-5" id="login-form">
+                <div class="col-lg-6 py-5 px-5" id="login-col">
+                    <!--- LOGIN FORM --->
+                    <%= render 'sessions/form' %>
+                </div>
             </div>
         </div>
-    </div>
-<main>
+    <main>
+</body>

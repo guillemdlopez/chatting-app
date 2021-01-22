@@ -3,6 +3,16 @@ button {
   outline: none !important;
 }
 
+.sign-up-btn {
+  opacity: 0.7 !important;
+  background: var(--lavender) !important;
+  border: none;
+
+  &:hover {
+    opacity: 1 !important;
+  }
+}
+
 .explore-btn {
   background: var(--lavender);
   color: white;
@@ -48,4 +58,11 @@ button {
     background: var(--lavender) !important;
     color: white !important;
   }
+}
+
+.login-btn {
+  background: var(--lavender) !important;
+  color: white !important;
+  width: 100%;
+  border: none;
 }

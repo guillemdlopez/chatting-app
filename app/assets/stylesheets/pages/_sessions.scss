@@ -1,12 +1,73 @@
-.sign-up-btn {
-  opacity: 0.7 !important;
+// LOGIN AND SIGN-UP FORMS
 
-  &:hover {
-    opacity: 1 !important;
+.login-title,
+.signup-title {
+  color: var(--green);
+  font-weight: bolder;
+}
+
+#login-col,
+#signup-col {
+  background: #292841;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.5);
+  height: fit-content;
+  input {
+    background: #464a55;
+    border: none;
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  label {
+    font-weight: 100 !important;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 10px !important;
   }
 }
 
-#login-form,
-#signup-form {
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+#signup-col {
+  .sign-up-btn {
+    width: 100%;
+    color: white !important;
+    opacity: 1 !important;
+  }
+
+  input:last-child {
+    background: #292841;
+    color: #292841;
+  }
+
+  .login-btn {
+    opacity: 0.7 !important;
+    border: none;
+    margin-top: 20px;
+    display: block;
+    background: none !important;
+  }
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+#login-col {
+  .sign-up-btn {
+    opacity: 0.7 !important;
+    border: none;
+    margin-top: 20px;
+    display: block;
+    background: none !important;
+  }
+}
+
+#login-page,
+#signup-page {
+  background: #36393f;
+  background-image: url(background-login-signup-forms.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-position-y: bottom;
+  background-size: contain;
+  height: 100vh;
 }
