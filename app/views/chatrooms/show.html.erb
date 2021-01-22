@@ -3,18 +3,19 @@
     <!-- SIDEBAR NAV (1st) -->
     <div id="sidebar-nav" class="d-flex flex-column align-items-center">
         <%= link_to '<i class="fas fa-compass home-icon mt-2 pb-2"></i>'.html_safe, root_path %>
-        <ul class="chat-imgs text-center flex-grow-1">
+        <ul class="chat-imgs text-left flex-grow-1">
             <% @chatrooms.each do |chat| %>
-                <li class="d-flex align-items-center">
-                    <div class="chat-name-badge hidden d-flex align-items-center mt-3" id="<%=chat.name%>">
+                <li class="d-flex align-items-center mt-3" id="chat-item">
+                    <div class="chat-name-badge hidden d-flex align-items-center" id="<%=chat.name%>">
                         <i class="fas fa-check-circle tick-icon mr-2"></i>
                         <p class="mb-0"><%= chat.name %></p>
                     </div>
+                    <div class="white-border"></div>
                     <%= link_to chat do %>
                         <% if chat === @chatroom %>
                             <% new_class = 'current-chat' %>
                         <% end %>
-                        <%= cl_image_tag chat.photo.key, class: "avatar-sm mt-3 #{new_class}", data: { name: chat.name }%></li>
+                        <%= cl_image_tag chat.photo.key, class: "avatar-sm ml-1 #{new_class}", data: { name: chat.name }%></li>
                     <% end %>
                 </li>
             <% end %>

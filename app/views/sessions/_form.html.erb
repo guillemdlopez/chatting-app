@@ -3,5 +3,7 @@
     <%= f.input :password, label: 'PASSWORD' %>
     <small class="form-text text-muted">We'll never share your password with anyone else.</small>
     <%= f.submit 'Login', class: 'btn btn-primary mt-3 login-btn' %>
-    <%= link_to 'Sign Up', signup_path, class: 'w-25 sign-up-btn mt-3' %>
+    <div class="d-flex align-items-center mt-3">
+        <p class="text-white-50 mb-0 mr-2">You do not have an account yet? </p> <%= link_to 'Sign Up', signup_path, class: 'w-25 sign-up-btn font-weight-bolder' %>
+    </div>
 <% end %>   
