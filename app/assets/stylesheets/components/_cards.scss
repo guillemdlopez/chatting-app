@@ -117,13 +117,17 @@
 }
 
 .result-card {
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.9);
+  // box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.9);
   overflow: hidden;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 10px 10px;
 
   .result-card-img {
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.9);
     height: 200px;
     max-width: 25%;
-    border-radius: 8px 0px 0px 8px;
+    border-radius: 8px;
     margin-right: 20px;
     object-fit: cover;
     object-position: center;
@@ -131,6 +135,7 @@
 
   .card-content {
     padding: 20px;
+    width: 50%;
 
     .chat-name {
       color: white;
