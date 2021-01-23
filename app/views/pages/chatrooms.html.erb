@@ -31,10 +31,10 @@
         <!-- MAIN CONTENT -->
         <div id="main-content-col">
             <h4 class="font-weight-bolder text-white-50"><span><%= link_to '<i class="fas fa-arrow-left text-white-50 mr-4 arrow-icon"></i>'.html_safe, root_path %><span> No results found... :(</h4>
-            <div class="explore-form">
+            <form class="explore-form">
                 <input type="text" placeholder="Explore communities" class="mt-3 explore-form-input"> 
                 <button class="banner-form-btn explore-form-btn"><i class="fas fa-search"></i></button>
-            </div>
+            </form>
             <ul class="list-tags mt-2">
                 <% @CATEGORIES.each do |category| %>
                     <li><p class="mb-0"><%= category.capitalize %></p></li>

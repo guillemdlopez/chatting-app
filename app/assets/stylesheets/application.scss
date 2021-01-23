@@ -16,3 +16,83 @@ $fa-font-path: "@fortawesome/fontawesome-free/webfonts";
 @import "pages/index";
 @import "config/index";
 @import "components/index";
+
+@media (max-width: 1169px) {
+  .cards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .banner {
+    height: 30vh;
+  }
+}
+
+@media (max-width: 990px) {
+  .cards {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .dropdown-user-status {
+    left: 191px;
+  }
+
+  .banner-form-btn {
+    right: 119px;
+  }
+
+  #sidebar-col {
+    width: 22vw;
+  }
+
+  #main-content-col {
+    width: 78vw;
+  }
+
+  .banner {
+    height: 31vh;
+  }
+
+  .latest-chat-card {
+    img {
+      width: 45%;
+    }
+  }
+
+  .chatroom-page {
+    #main-content-col {
+      height: 96.3vh;
+      width: 67vw;
+    }
+
+    .chat-messages {
+      height: 83vh;
+    }
+
+    #sidebar-col {
+      width: 24vw;
+    }
+
+    #sidebar-nav {
+      width: 9vw;
+    }
+  }
+
+  .result-card {
+    .result-card-img {
+      width: 37%;
+    }
+  }
+
+  .chat-message-form {
+    width: 92% !important;
+  }
+
+  #create-community {
+    width: 44% !important;
+  }
+
+  #login-page,
+  #signup-page {
+    background-size: auto;
+  }
+}

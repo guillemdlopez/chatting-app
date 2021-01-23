@@ -86,7 +86,7 @@
         <!-- NEW CHATROOM FORM -->
        <%= simple_form_for @chatroom, url: chatrooms_path, remote: true do |f| %>
             <div class="row justify-content-center" id="new-chat-row">
-                <div class="col-lg-5" id="new-chat-form" style="background: #36393F">
+                <div class="col-lg-5 col-md-12" id="new-chat-form" style="background: #36393F">
                     <%= f.input :name, label: 'NAME', placeholder: 'Forest Gump'%>
                     <%= f.input :description, label: 'DESCRIPTION', placeholder: 'Are you a fan of Forest Gump? What are you waiting for? Join the chat group!' %>
                     <%= f.input :category, collection: Chatroom::CATEGORIES, label: 'CATEGORY', placeholder: 'programming', include_blank: 'Select a category' %>

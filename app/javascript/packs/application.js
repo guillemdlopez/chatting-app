@@ -25,6 +25,7 @@ import { displayStatusMenu } from "../functions/displayStatusMenu";
 import { displayMessageForm } from "../functions/displayMessageForm";
 import { closeAlert } from "../functions/closeAlert";
 import { cleanInput } from "../functions/cleanInput";
+import { submitExploreForm } from "../functions/submitExploreForm";
 
 // import "../../assets/stylesheets/application";
 
@@ -49,4 +50,5 @@ document.addEventListener("turbolinks:load", () => {
   displayMessageForm();
   closeAlert();
   cleanInput();
+  submitExploreForm();
 });
