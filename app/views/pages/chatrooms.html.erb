@@ -4,10 +4,12 @@
         <div id="sidebar-col">
             <div class="menu">
                 <h4 class="text-white">Discover</h4>
-                <div class="d-flex align-items-center home-item mt-3">
-                    <i class="fas fa-compass"></i>
-                    <p class="mb-0 ml-2">Home</p>
-                </div>
+                <%= link_to root_path do %>
+                    <div class="d-flex align-items-center home-item mt-3">
+                        <i class="fas fa-compass"></i>
+                        <p class="mb-0 ml-2">Home</p>
+                    </div>
+                <% end %>
                 <!--- CATEGORIES LIST PARTIAL -->
                 <%= render 'chatrooms/categories_list' %>
             </div>
@@ -28,9 +30,11 @@
 
         <!-- MAIN CONTENT -->
         <div id="main-content-col">
-            <h4 class="font-weight-bolder text-white-50"><span class="mr-2"><%= link_to '&#10229;'.html_safe, root_path %><span> No results found... :(</h4>
-            <input type="text" placeholder="Explore communities" class="mt-3 explore-form"> 
-            <button class="banner-form-btn explore-form-btn"><i class="fas fa-search"></i></button>
+            <h4 class="font-weight-bolder text-white-50"><span><%= link_to '<i class="fas fa-arrow-left text-white-50 mr-4 arrow-icon"></i>'.html_safe, root_path %><span> No results found... :(</h4>
+            <div class="explore-form">
+                <input type="text" placeholder="Explore communities" class="mt-3 explore-form-input"> 
+                <button class="banner-form-btn explore-form-btn"><i class="fas fa-search"></i></button>
+            </div>
             <ul class="list-tags mt-2">
                 <% @CATEGORIES.each do |category| %>
                     <li><p class="mb-0"><%= category.capitalize %></p></li>
@@ -39,7 +43,7 @@
             <div class="search-results mt-5">
                 <% @chatrooms.each do |chatroom|  %>
                     <%= link_to chatroom do %>
-                        <div class="result-card d-flex mb-5 align-items-center">
+                        <div class="result-card d-flex align-items-center">
                             <%= cl_image_tag chatroom.photo.key, class: 'result-card-img' %>
                             <div class="card-content">
                                 <%= cl_image_tag chatroom.photo.key, class: 'avatar-xs mb-2' %>
@@ -49,8 +53,8 @@
                                 </div>
                                 <p class="text-white-50 font-weight-light mt-1"><%= chatroom.description%></p>
                                 <div class="card-tags justify-content-start">
-                                    <p class="text-white-50 mt-3 mr-3"><%= pluralize(chatroom.messages.count, 'message')%></p>
-                                    <p class="text-white-50 mt-3">#<%= chatroom.category %></p>
+                                    <p class="text-white-50 mt-3 mr-3 mb-0 message-tag"><%= pluralize(chatroom.messages.count, 'message')%></p>
+                                    <p class="text-white-50 mt-3 mb-0 category-tag">#<%= chatroom.category %></p>
                                 </div>
                             </div>
                         </div>

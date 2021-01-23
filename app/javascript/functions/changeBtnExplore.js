@@ -6,6 +6,7 @@ const changeBtnExplore = () => {
   if (exploreBtn) {
     exploreBtn.addEventListener("mouseover", (e) => {
       e.target.innerHTML = "<i class='fas fa-arrow-down'></i>";
+      // e.target.style.transition = "0.5s";
     });
 
     exploreBtn.addEventListener("mouseleave", (e) => {

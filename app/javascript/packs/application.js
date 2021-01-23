@@ -24,6 +24,7 @@ import { displayChatName } from "../functions/displayChatName";
 import { displayStatusMenu } from "../functions/displayStatusMenu";
 import { displayMessageForm } from "../functions/displayMessageForm";
 import { closeAlert } from "../functions/closeAlert";
+import { cleanInput } from "../functions/cleanInput";
 
 // import "../../assets/stylesheets/application";
 
@@ -47,4 +48,5 @@ document.addEventListener("turbolinks:load", () => {
   displayStatusMenu();
   displayMessageForm();
   closeAlert();
+  cleanInput();
 });

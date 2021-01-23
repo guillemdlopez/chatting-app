@@ -23,7 +23,7 @@
     display: block;
     margin-top: 5px;
     cursor: pointer;
-    padding: 14px;
+    padding: 10px;
     font-weight: 500;
     color: rgba(255, 255, 255, 0.5);
 
@@ -37,7 +37,7 @@
   .selected-cat {
     background: var(--lavender);
     color: white;
-    padding: 14px;
+    padding: 10px;
     border-radius: 4px;
   }
 
@@ -56,7 +56,7 @@
 .user-info {
   position: fixed;
   bottom: 0px;
-  background: #36393f;
+  background: #202225;
   width: inherit;
   padding: 10px;
   font-weight: 600;

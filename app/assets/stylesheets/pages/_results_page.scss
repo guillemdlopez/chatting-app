@@ -1,0 +1,22 @@
+.explore-page {
+  .home-item {
+    font-size: 15px;
+    display: block;
+    margin-top: 5px;
+    cursor: pointer;
+    padding: 10px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.5);
+  }
+}
+
+.cross-style {
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  height: 37px;
+  width: 39px;
+  padding: -5px;
+  font-size: 24px;
+  vertical-align: middle;
+  color: black;
+}
