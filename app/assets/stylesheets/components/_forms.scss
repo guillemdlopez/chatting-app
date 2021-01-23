@@ -38,6 +38,7 @@
   padding: 20px;
   border-radius: 4px;
   box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 
   #chatroom_name,
   #chatroom_description,
@@ -72,4 +73,15 @@
     background-position-y: top;
     margin-top: 0px;
   }
+}
+
+.explore-form {
+  height: 45px;
+  width: 100%;
+  border-radius: 8px;
+  border: none;
+  background: #202225;
+  padding: 10px;
+  font-size: 14px;
+  position: relative;
 }

@@ -15,38 +15,50 @@ class UsersController < ApplicationController
 
     if @user.save
       session[:user_id] = @user.id
-      flash[:notice] = "Welcome to Message Me, #{@user.username}. Start chatting with people all over the globe!"
+      flash[:success] = "Welcome to Message Me, #{@user.username}. Start chatting with people all over the globe!"
 
       redirect_to root_path
+    else
+      flash.now[:alert] = 'Something went wrong, please try it again💔'
+
+      render :new
     end
   end
 
   def online
     @user.status = 'online'
-    @user.save
     
-    redirect_to root_path
+    if @user.save
+      flash[:notice] = "You are back online"
+      redirect_back(fallback_location: root_path)
+    end
   end
 
     def offline
       @user.status = 'offline'
 
-      @user.save
-      redirect_to root_path
+      if @user.save
+        flash[:notice] = 'You are offline. Nobody can see you are still on the app. You are a hacker😎'
+        redirect_back(fallback_location: root_path)
+      end
     end
 
     def absent
       @user.status = 'absent'
 
-      @user.save
-      redirect_to root_path
+      if @user.save
+        flash[:notice] = 'It seems like you fell asleep on your computer or that you are temporary inactive'
+        redirect_back(fallback_location: root_path)
+      end
     end
 
     def idle
       @user.status = 'idle'
 
-      @user.save
-      redirect_to root_path
+      if @user.save
+        flash[:notice] = "Honestly, if you chose this state is because you don't know how to feel right know. Go get some rest"
+        redirect_back(fallback_location: root_path)
+      end
     end
 
   private

@@ -24,11 +24,13 @@ class ChatroomsController < ApplicationController
         @chatroom = Chatroom.new(chatroom_params)
 
         if @chatroom.save
-            flash[:notice] = "You created the chatroom #{@chatroom.name} succesfully. Start chatting with people! Remember: Do not give away any private information such as bank credentials, address or anything private"
+            flash[:notice] = "You created the chatroom #{@chatroom.name} succesfully. Start chatting with people! Remember: Do not give away any private information such as bank credentials, address or anything else related"
 
             redirect_to chatroom_path(@chatroom)
         else
-            render :index
+            flash.now[:alert] = 'Something went wrong, please try it again💔'
+
+            render :new
         end
     end
 

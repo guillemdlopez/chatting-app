@@ -1,11 +1,11 @@
 <div class="chatroom-page d-flex" id=chatroom data-chatroom-id="<%=@chatroom.id%>">
 
     <!-- SIDEBAR NAV (1st) -->
-    <div id="sidebar-nav" class="d-flex flex-column align-items-center">
-        <%= link_to '<i class="fas fa-compass home-icon mt-2 pb-2"></i>'.html_safe, root_path %>
-        <ul class="chat-imgs text-left flex-grow-1">
+    <div id="sidebar-nav" class="d-flex flex-column ">
+        <%= link_to '<i class="fas fa-compass home-icon mt-2 pb-2"></i>'.html_safe, root_path, class: 'text-center' %>
+        <ul class="chat-imgs ml-0 flex-grow-1">
             <% @chatrooms.each do |chat| %>
-                <li class="d-flex align-items-center mt-3" id="chat-item">
+                <li class="d-flex align-items-center mt-3 justify-content-start" id="chat-item">
                     <div class="chat-name-badge totally-hidden d-flex align-items-center" id="<%=chat.name%>">
                         <i class="fas fa-check-circle tick-icon mr-2"></i>
                         <p class="mb-0"><%= chat.name %></p>
@@ -14,13 +14,14 @@
                     <%= link_to chat do %>
                         <% if chat === @chatroom %>
                             <% new_class = 'current-chat' %>
+                            <% new_height = 'double-height'%>
                         <% end %>
-                        <%= cl_image_tag chat.photo.key, class: "avatar-sm ml-1 #{new_class}", data: { name: chat.name }%></li>
+                        <%= cl_image_tag chat.photo.key, class: "avatar-sm ml-3 #{new_class}", data: { name: chat.name }%></li>
                     <% end %>
                 </li>
             <% end %>
         </ul>
-        <%= link_to '<i class="fas fa-plus mb-4 plus-icon"></i>'.html_safe, new_chatroom_path %>
+        <%= link_to '<i class="fas fa-plus mb-4 plus-icon"></i>'.html_safe, new_chatroom_path, class:' text-center' %>
     </div>
 
     <!-- SIDEBAR COL (2nd) -->

@@ -6,36 +6,40 @@
                 <p class="mb-0"><%= current_user.status.capitalize %></p>
             </li>
             <% if current_user.status != 'offline' %>
-                <li>
-                    <%= link_to user_offline_path(current_user) do %>
-                        <i class="fas fa-circle status-offline mr-2"></i>
-                        Offline
-                    <% end %>
-                </li>
+                <%= link_to user_offline_path(current_user) do %>
+                    <li>
+                            <i class="fas fa-circle status-offline mr-2"></i>
+                            Offline
+                    </li>
+                <% end %>
             <% end %>
             <% if current_user.status != 'absent' %>
-                <li>
-                    <%= link_to user_absent_path(current_user) do %>
-                        <i class="fas fa-circle status-absent mr-2"></i>
-                        Absent
-                    <% end %>
-                </li>
+                <%= link_to user_absent_path(current_user) do %>
+                    <li>
+                            <i class="fas fa-circle status-absent mr-2"></i>
+                            Absent
+                    </li>
+                <% end %>
             <% end %>
             <% if current_user.status != 'idle' %>
-                <li>
-                    <%= link_to user_idle_path(current_user) do %>
-                        <i class="fas fa-circle status-idle mr-2"></i>
-                        Idle
-                    <% end %>
-                </li>
+                <%= link_to user_idle_path(current_user) do %>
+                    <li>
+                            <i class="fas fa-circle status-idle mr-2"></i>
+                            Idle
+                    </li>
+                <% end %>
             <% end %>
             <% if current_user.status != 'online' %>
-                <li>
-                    <%= link_to user_online_path(current_user) do %>
+                <%= link_to user_online_path(current_user) do %>
+                    <li>
                         <i class="fas fa-circle status-online mr-2"></i>
-                        Online
-                    <% end %>
-                </li>
+                            Online
+                    </li>
+                <% end %>
+            <% end %>
+
+            <%= link_to profile_path(current_user.username) do %>
+                <li>Profile</li>
             <% end %>
         </ul>
     </div>

@@ -1,4 +1,4 @@
-<% if new_user_online %>
+<% if new_user_online && logged_in? %>
     <div class="d-flex align-items-center justify-content-bewteen new-user-online text-white">
         <%= cl_image_tag new_user_online.avatar.key, class: 'avatar-xs mr-2' %>
         <p class="mb-0 mr-4"><strong><%= new_user_online.username %></strong> is now online! </p>

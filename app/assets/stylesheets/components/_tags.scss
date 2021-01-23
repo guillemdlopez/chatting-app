@@ -1,0 +1,30 @@
+.explore-page {
+  .list-tags {
+    padding-left: 0px;
+
+    li {
+      display: inline-flex;
+      color: rgba(255, 255, 255, 0.3);
+      font-weight: bolder;
+      margin-right: 10px;
+      margin-top: 10px;
+      padding: 8px;
+      border-radius: 8px;
+      font-size: small;
+    }
+
+    li:last-child {
+      margin-right: 0px;
+    }
+
+    li:first-child {
+      background: var(--lavender);
+      color: white;
+    }
+  }
+
+  .selected-category {
+    background: var(--lavender);
+    color: white;
+  }
+}
