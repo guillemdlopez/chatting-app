@@ -7,7 +7,7 @@
                 <i class="fas fa-check-circle mr-2 tick-icon"></i>
                 <p class="font-weight-bolder mb-0"><%= chat.name %></p>
             </div>
-            <p class="text-white-50 font-weight-regular"><%= chat.description.truncate(60) %></p>
+            <p class="text-white-50 font-weight-regular"><%= chat.description.truncate(50) %></p>
             <div class="card-tags mt-4">
                 <p class="message-tag"><small><%= pluralize(chat.messages.count, 'message') %></small></p>
                 <p class="category-tag"><small>#<%= chat.category %></small></p>

@@ -39,7 +39,10 @@
                 <%= link_to 'Logout', logout_path, method: :delete, class: 'btn btn-outline-light my-2 my-sm-0 nav-logout' %>
             <% end %>
             <% if logged_in? && current_user.avatar.attached? %>
-                <%= cl_image_tag current_user.avatar.key, class: 'avatar-xs ml-2' %>
+                <%= cl_image_tag current_user.avatar.key, class: 'avatar-xs ml-2 dropdown dropdown-toggle' %>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <%= link_to 'Profile', profile_path(current_user.username), class: 'dropdown-item' %>
+                </div>
             <% end %>
         </div>
     </div>

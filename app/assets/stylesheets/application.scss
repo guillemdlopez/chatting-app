@@ -17,13 +17,80 @@ $fa-font-path: "@fortawesome/fontawesome-free/webfonts";
 @import "config/index";
 @import "components/index";
 
+@media (max-width: 414px) {
+  .banner {
+    height: 22vh;
+  }
+
+  .cards {
+    grid-template-columns: 1fr !important;
+  }
+
+  .chatroom-page {
+    #main-content-col {
+      height: 97vh;
+    }
+  }
+}
+
 @media (max-width: 1169px) {
   .cards {
     grid-template-columns: 1fr 1fr 1fr;
   }
 
+  .chatroom-page #main-content-col {
+    height: 96vh;
+  }
+
   .banner {
-    height: 30vh;
+    height: 400px;
+  }
+
+  .banner-form-btn {
+    right: 160px;
+  }
+  .result-card .result-card-img {
+    max-width: 40%;
+  }
+
+  #sidebar-col {
+    width: 21vw;
+  }
+
+  .chatroom-page #sidebar-col {
+    width: 24vw;
+  }
+
+  #main-content-col {
+    width: 79vw;
+  }
+  .chatroom-page #sidebar-nav {
+    width: 9vw;
+  }
+
+  .chatroom-page #main-content-col {
+    width: 67vw;
+  }
+
+  .chat-messages {
+    height: 87vh;
+  }
+
+  .chat-message-form {
+    width: 91% !important;
+  }
+
+  #create-community {
+    width: 100% !important;
+  }
+
+  #login-page,
+  #signup-page {
+    background-size: cover;
+  }
+
+  .dropdown-user-status {
+    left: 187px;
   }
 }
 
@@ -49,7 +116,7 @@ $fa-font-path: "@fortawesome/fontawesome-free/webfonts";
   }
 
   .banner {
-    height: 31vh;
+    height: 386px;
   }
 
   .latest-chat-card {
@@ -79,7 +146,7 @@ $fa-font-path: "@fortawesome/fontawesome-free/webfonts";
 
   .result-card {
     .result-card-img {
-      width: 37%;
+      max-width: 37%;
     }
   }
 
