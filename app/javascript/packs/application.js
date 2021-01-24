@@ -26,6 +26,7 @@ import { displayMessageForm } from "../functions/displayMessageForm";
 import { closeAlert } from "../functions/closeAlert";
 import { cleanInput } from "../functions/cleanInput";
 import { submitExploreForm } from "../functions/submitExploreForm";
+import { replyMessage } from "../functions/replyMessage";
 
 // import "../../assets/stylesheets/application";
 
@@ -51,4 +52,5 @@ document.addEventListener("turbolinks:load", () => {
   closeAlert();
   cleanInput();
   submitExploreForm();
+  replyMessage();
 });

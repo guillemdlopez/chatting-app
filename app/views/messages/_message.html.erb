@@ -1,10 +1,22 @@
-<div class="message d-flex align-items-center mb-2 py-2" id="message-<%=message.id%>">
-    <%= link_to profile_path(message.user.username) do %>
+<div class="message d-flex align-items-center mb-2 py-2" id="message-<%=message.id%>" data-user="<%=message.user.username%>">
         <%= cl_image_tag message.user.avatar.key, class: 'avatar-xs mr-2 ml-1' %>
         <div class="message-content">
-            <div class="d-flex align-items-center username-time mb-1">
-                <p class="mb-0 <%= message.user == current_user ? 'username-current' : '' %>" id="username"><%= message.user == current_user ? 'Me' : message.user.username %></p><% end %><small id="time" class="font-weight-regular text-muted ml-2"><%= message.created_at.strftime("%d/%m/%y") == Date.today.strftime("%d/%m/%y") ? 'today at ' + message.created_at.strftime("%H:%M") : message.created_at.strftime("%d/%m/%y") == Date.yesterday.strftime("%d/%m/%y") ? 'yesterday at ' + message.created_at.strftime("%H:%M") : message.created_at.strftime("%d/%m/%y")%></small>
+            <% if message.body.match?(/^@/) %>
+                <div class="replied-msg d-flex align-items-center text-muted mb-2">
+                    <p class="font-weight-bolder mr-2 mb-0">&#10553;</p>
+                    <p class="font-weight-bolder mb-0" style="color: var(--lavender)"><small><%= message.body.split("-")[0]%></small></p> 
+                </div>
+            <% end %>
+            <div class="d-flex align-items-center username-time mb-1 flex-grow-1">
+                <%= link_to profile_path(message.user.username) do %>
+                    <p class="mb-0 <%= message.user == current_user ? 'username-current' : '' %>" id="username"><%= message.user == current_user ? 'Me' : message.user.username %></p>
+                <% end %>
+                
+                <small id="time" class="font-weight-regular text-muted ml-2"><%= message.created_at.strftime("%d/%m/%y") == Date.today.strftime("%d/%m/%y") ? 'today at ' + message.created_at.strftime("%H:%M") : message.created_at.strftime("%d/%m/%y") == Date.yesterday.strftime("%d/%m/%y") ? 'yesterday at ' + message.created_at.strftime("%H:%M") : message.created_at.strftime("%d/%m/%y")%></small>
             </div>
-            <p class="mb-0" id="message-content"><%= message.body %></p>
+            <p class="mb-0" id="message-content"><%= message.body.split("-").size > 1 ? message.body.split("-")[1] : message.body.split("-")[0] %></p>
         </div>
+    <% if message.user != current_user %>
+        <p class="reply mb-0">Reply</p>
+    <% end %>
 </div>

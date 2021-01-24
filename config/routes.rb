@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   get '/chatrooms', to: 'pages#chatrooms'
 
   resources :chatrooms, only: [:show, :new, :create] do
-    resources :messages, only: [:create]
+    resources :messages, only: [:create] do
+    end
   end
 
   get 'login', to: 'sessions#new'
@@ -21,4 +22,8 @@ Rails.application.routes.draw do
     # get 'do not disturb', to: 'users#do_not_disturb'
   end
   get '/:username', to: 'users#show', as: 'profile'
+
+  resources :messages do 
+    resources :likes, only: [:create]
+  end
 end

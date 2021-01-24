@@ -129,11 +129,16 @@
   height: 60px !important;
   border: none !important;
   background: var(--green);
-  opacity: 0.5;
+  color: white;
+  width: 6%;
 
   &:hover {
     background: var(--green) !important;
   }
+}
+
+.disabled {
+  opacity: 0.5 !important;
 }
 
 .user-list {
@@ -210,5 +215,31 @@
     li:last-child {
       margin-right: 0px;
     }
+  }
+}
+
+.message {
+  position: relative;
+
+  &:hover .reply {
+    opacity: 1;
+  }
+}
+
+.reply {
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.8);
+  background: #292841;
+  border-radius: 4px;
+  position: absolute;
+  right: 100px;
+  padding: 4px;
+  opacity: 0;
+  transition: 0.2s;
+
+  &:hover {
+    color: white;
+    background: rgba(255, 255, 255, 0.1);
   }
 }

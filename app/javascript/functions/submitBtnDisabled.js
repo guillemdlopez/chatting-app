@@ -6,8 +6,8 @@ const submitBtnDisabled = () => {
   if (submitBtn) {
     input.addEventListener("input", function (e) {
       this.value === ""
-        ? (submitBtn.style.opacity = "0.5")
-        : (submitBtn.style.opacity = "1");
+        ? submitBtn.classList.add("disabled")
+        : submitBtn.classList.remove("disabled");
     });
   }
 };

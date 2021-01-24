@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_21_172431) do
+ActiveRecord::Schema.define(version: 2021_01_24_155546) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -41,6 +41,16 @@ ActiveRecord::Schema.define(version: 2021_01_21_172431) do
     t.text "description"
   end
 
+  create_table "likes", force: :cascade do |t|
+    t.integer "likes", default: 0
+    t.integer "user_id", null: false
+    t.integer "message_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["message_id"], name: "index_likes_on_message_id"
+    t.index ["user_id"], name: "index_likes_on_user_id"
+  end
+
   create_table "messages", force: :cascade do |t|
     t.text "body"
     t.integer "user_id", null: false
@@ -60,6 +70,8 @@ ActiveRecord::Schema.define(version: 2021_01_21_172431) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "likes", "messages"
+  add_foreign_key "likes", "users"
   add_foreign_key "messages", "chatrooms"
   add_foreign_key "messages", "users"
 end
