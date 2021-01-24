@@ -1,4 +1,5 @@
 <%= simple_form_for [@chatroom, @message], html: { class: 'chat-message-form w-100'}, remote: true do |f| %>
     <%= f.input :body, placeholder: "Send a message to ##{@chatroom.name}", class: 'message-input pl-2', label: false %>
+    <div >
     <%= f.submit 'Send', class: 'submit disabled' %>
 <% end %>

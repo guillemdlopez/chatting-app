@@ -10,6 +10,14 @@ const initChatroomCable = () => {
       { channel: "ChatroomChannel", id: id },
       {
         received(data) {
+          // const reply = document.querySelector(".replying-msg");
+          // let replyTxt;
+
+          // if (reply) {
+          //   replyTxt = reply.firstElementChild.textContent;
+          // }
+          // const finalMsg = replyTxt === "" ? data : replyTxt + data;
+
           messagesContainer.insertAdjacentHTML("beforeend", data);
           initChatScrolling("smooth");
           const input = document.getElementById("message_body");

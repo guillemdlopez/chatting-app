@@ -13,12 +13,14 @@ const replyMessage = () => {
         input.value = "";
         const message = e.target.closest(".message");
         const user = message.dataset.user;
-        const text = message.children[1].lastElementChild.textContent;
+        const text = message.children[1].lastElementChild.textContent.replace(
+          /\s$/,
+          ""
+        );
         console.log(text);
 
-        displayAlert("Please do not remove this line. Enjoy chatting!");
-
         input.value = `@${user} ${text} - \n`;
+        displayAlert("Please do not remove this line. Enjoy the chat!");
         input.focus();
         if (submitBtn.classList.contains("disabled")) {
           submitBtn.classList.remove("disabled");

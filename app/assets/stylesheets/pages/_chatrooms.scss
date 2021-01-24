@@ -164,7 +164,7 @@
   color: rgba(255, 255, 255, 0.7);
   margin-top: 20px;
   border: none;
-  border-radius: 40px 0px 0px 40px;
+  border-radius: 15px 0px 0px 15px;
 }
 
 .message:hover {
@@ -255,4 +255,16 @@
   p:last-child {
     color: var(--lavender);
   }
+}
+
+.replying-msg {
+  background: var(--lavender);
+  position: fixed;
+  bottom: 119px;
+  right: 80px;
+  z-index: 1;
+  padding: 10px;
+  border-radius: 8px 8px 0px 0px;
+  transition: 0.5s;
+  width: 69.8%;
 }

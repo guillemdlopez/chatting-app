@@ -151,21 +151,21 @@
   border-radius: 8px;
   border: 2px solid white;
   transition: 0.5s;
+}
 
-  .close-icon {
-    font-weight: light;
-    font-size: 20px;
-    cursor: pointer;
-    opacity: 0.5;
-    padding: 1px;
-    border-radius: 50%;
-    width: 30px;
-    text-align: center;
+.close-icon {
+  font-weight: light;
+  font-size: 20px;
+  cursor: pointer;
+  opacity: 0.5;
+  padding: 1px;
+  border-radius: 50%;
+  width: 30px;
+  text-align: center;
 
-    &:hover {
-      opacity: 1;
-      background: rgba(255, 255, 255, 0.2);
-    }
+  &:hover {
+    opacity: 1;
+    background: rgba(255, 255, 255, 0.2);
   }
 }
 
