@@ -221,12 +221,14 @@
 .message {
   position: relative;
 
-  &:hover .reply {
+  &:hover .reply,
+  &:hover .delete-icon {
     opacity: 1;
   }
 }
 
-.reply {
+.reply,
+.delete-icon {
   cursor: pointer;
   color: rgba(255, 255, 255, 0.5);
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.8);
@@ -241,5 +243,16 @@
   &:hover {
     color: white;
     background: rgba(255, 255, 255, 0.1);
+  }
+}
+
+.delete-icon {
+  font-size: 25px;
+  top: 24px;
+}
+
+.replied-msg {
+  p:last-child {
+    color: var(--lavender);
   }
 }

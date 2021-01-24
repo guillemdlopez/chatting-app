@@ -1,6 +1,6 @@
 "use strict";
 
-import { submitBtnDisabled } from "./submitBtnDisabled";
+import { displayAlert } from "./displayAlert";
 
 const replyMessage = () => {
   const messages = document.querySelector(".chat-messages");
@@ -10,9 +10,13 @@ const replyMessage = () => {
   if (messages) {
     messages.addEventListener("click", (e) => {
       if (e.target.classList.contains("reply")) {
+        input.value = "";
         const message = e.target.closest(".message");
         const user = message.dataset.user;
         const text = message.children[1].lastElementChild.textContent;
+        console.log(text);
+
+        displayAlert("Please do not remove this line. Enjoy chatting!");
 
         input.value = `@${user} ${text} - \n`;
         input.focus();
