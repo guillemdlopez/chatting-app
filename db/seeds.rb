@@ -17,14 +17,14 @@ Chatroom.destroy_all
 puts "Creating users with ***🎨📸ATTACHED PHOTOS🎨📸***"
 
 # USER_1
-user_1 = User.create!(username: 'Guillem', password: 'password')
+user_1 = User.create!(username: 'Guillem', password: 'password', email: "guillemdelas@hotmail.com")
 avatar_1 = URI.open('https://source.unsplash.com/1600x900/?avatar,boy')
 user_1.avatar.attach(io: avatar_1, filename: 'guillem_avatar.jpg', content_type: 'image/jpg')
 
 #######################################################
 
 # USER_2
-user_2 = User.create!(username: 'Núria', password: 'password')
+user_2 = User.create!(username: 'Núria', password: 'password', email: "nuria@gmail.com")
 
 # AVATAR_2
 avatar_2 = URI.open('https://source.unsplash.com/1600x900/?avatar,woman')
@@ -33,7 +33,7 @@ user_2.avatar.attach(io: avatar_2, filename: 'nuria_avatar.jpg', content_type: '
 #######################################################
 
 # USER_3
-user_3 = User.create!(username: 'Ramon', password: 'password')
+user_3 = User.create!(username: 'Ramon', password: 'password', email: "ramondelas@gmail.com")
 
 # avatar_3
 avatar_3 = URI.open('https://source.unsplash.com/1600x900/?avatar,man')
@@ -43,7 +43,7 @@ user_3.avatar.attach(io: avatar_3, filename: 'ramon_avatar.jpg', content_type: '
 #######################################################
 
 # USER_4
-user_4 = User.create!(username: 'Antonio', password: 'password')
+user_4 = User.create!(username: 'Antonio', password: 'password', email: "amoralesrosa@gmail.com")
 
 # AVATAR_4
 avatar_4 = URI.open('https://source.unsplash.com/1600x900/?avatar,boy')
@@ -52,7 +52,7 @@ user_4.avatar.attach(io: avatar_4, filename: 'antonio_avatar.jpg', content_type:
 #######################################################
 
 # USER_5
-user_5 = User.create!(username: 'Maricarmen', password: 'password')
+user_5 = User.create!(username: 'Maricarmen', password: 'password', email: "maricarmen@gmail.com")
 
 # AVATAR_5
 avatar_5 = URI.open('https://source.unsplash.com/1600x900/?avatar,woman')
