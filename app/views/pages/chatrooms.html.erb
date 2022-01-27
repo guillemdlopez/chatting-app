@@ -31,34 +31,49 @@
 
         <!-- MAIN CONTENT -->
         <div id="main-content-col">
-            <h4 class="font-weight-bolder text-white-50"><span><%= link_to '<i class="fas fa-arrow-left text-white-50 mr-4 arrow-icon"></i>'.html_safe, root_path %><span> No results found... :(</h4>
-            <form class="explore-form">
-                <input type="text" placeholder="Explore communities" class="mt-3 explore-form-input"> 
-                <button class="banner-form-btn explore-form-btn"><i class="fas fa-search"></i></button>
-            </form>
+            <h4 class="font-weight-bolder text-white-50">
+                <span><%= link_to '<i class="fas fa-arrow-left text-white-50 mr-4 arrow-icon"></i>'.html_safe, root_path %><span> 
+                <% unless @results_message.blank? %>
+                    <%= @results_message %>
+                <% end %>
+            </h4>
+            <%= form_tag chatrooms_path, remote: true, method: :get, class: 'explore-form' do %>
+                <%= text_field_tag :chatroom, params[:chatroom], label: false, placeholder: 'Explore communities', class: 'mt-3 explore-form-input' %>
+                <%= button_tag type: :submit, class: 'banner-form-btn explore-form-btn' do %>
+                    <i class="fas fa-search"></i>
+                <% end %>
+            <% end %>
             <ul class="list-tags mt-2">
+                <li class="category <% if request.fullpath == chatrooms_path %> selected-category <% end %>"><%= link_to 'All', chatrooms_path %></li>
                 <% @CATEGORIES.each do |category| %>
-                    <li><p class="mb-0"><%= category.capitalize %></p></li>
+                    <li class="category <% if params[:chatroom] == category %> selected-category <% end %>"> <%= link_to chatrooms_path(chatroom: category) do %> <p class="mb-0"><%= category.capitalize %></p> <% end %></li>
                 <% end %>
             </ul>
             <div class="search-results mt-5">
-                <% @chatrooms.each do |chatroom|  %>
-                    <%= link_to chatroom do %>
-                        <div class="result-card d-flex align-items-center">
-                            <%= cl_image_tag chatroom.photo.key, class: 'result-card-img' %>
-                            <div class="card-content">
-                                <%= cl_image_tag chatroom.photo.key, class: 'avatar-xs mb-2' %>
-                                <div class="d-flex align-items-center">
-                                    <i class="fas fa-check-circle mr-2 tick-icon"></i>
-                                    <p class="mb-0 chat-name"><%= chatroom.name%></p>
-                                </div>
-                                <p class="text-white-50 font-weight-light mt-1"><%= chatroom.description%></p>
-                                <div class="card-tags justify-content-start">
-                                    <p class="text-white-50 mt-3 mr-3 mb-0 message-tag"><%= pluralize(chatroom.messages.count, 'message')%></p>
-                                    <p class="text-white-50 mt-3 mb-0 category-tag">#<%= chatroom.category %></p>
+                <% if @chatrooms.empty? %>
+                <div class="no-chats-msg">
+                  <p class="no-chats-msg-content">There is nothing here!</p>
+                  <%= link_to 'Go back', root_path, class: 'green-link' %>
+                </div>
+                <% else %>
+                    <% @chatrooms.each do |chatroom|  %>
+                        <%= link_to chatroom do %>
+                            <div class="result-card d-flex align-items-center">
+                                <%= cl_image_tag chatroom.photo.key, class: 'result-card-img' %>
+                                <div class="card-content">
+                                    <%= cl_image_tag chatroom.photo.key, class: 'avatar-xs mb-2' %>
+                                    <div class="d-flex align-items-center">
+                                        <i class="fas fa-check-circle mr-2 tick-icon"></i>
+                                        <p class="mb-0 chat-name"><%= chatroom.name%></p>
+                                    </div>
+                                    <p class="text-white-50 font-weight-light mt-1"><%= chatroom.description%></p>
+                                    <div class="card-tags justify-content-start">
+                                        <p class="text-white-50 mt-3 mr-3 mb-0 message-tag"><%= pluralize(chatroom.messages.count, 'message')%></p>
+                                        <p class="text-white-50 mt-3 mb-0 category-tag">#<%= chatroom.category %></p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        <% end %>
                     <% end %>
                 <% end %>
             </div>

@@ -1,9 +1,10 @@
+<!-- HOME PAGE -->
 <div class="home-page d-flex">
     <!-- SIDEBAR MENU -->
     <div id="sidebar-col">
         <div class="menu">
             <h4>Discover</h4>
-            <div class="d-flex align-items-center home-item mt-3">
+            <div class="d-flex align-items-center selected-cat home-item mt-3">
                 <i class="fas fa-compass"></i>
                 <p class="mb-0 ml-2">Home</p>
             </div>
@@ -32,9 +33,13 @@
             <div class="banner-content">
                 <h2 class="font-weight-bolder title-banner">Welcome back, <%= current_user.username %></h2>
                 <p class="banner-description font-weight-light">Chat with people all over the world about literally anything!</p>
-                <form class="banner-form d-flex justify-content-center align-items-center">
-                    <input type="text" placeholder="Explore communities" class="px-3"> <button class="banner-form-btn"><i class="fas fa-search"></i></button>
-                </form>
+                <%= form_tag chatrooms_path, method: :get, class: 'banner-form' do %>
+                    <%= text_field_tag :chatroom, params[:chatroom], label: false, placeholder: 'Explore communities' %>
+                    <%= button_tag type: :submit, class: 'banner-form-btn' do %>
+                        <i class="fas fa-search"></i>
+                    <% end %>
+                <% end %>
+
                 <div class="d-flex justify-content-center mt-5">
                     <%= link_to new_chatroom_path do %>
                         <button class="create-chat-btn">Create a chat</button>

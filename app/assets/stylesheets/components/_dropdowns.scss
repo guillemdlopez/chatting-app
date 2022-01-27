@@ -40,3 +40,13 @@
     color: rgba(255, 255, 255, 0.5);
   }
 }
+
+/* Bootstrap dropdowns navbar */
+.dropdown-item {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.dropdown-item:hover, .dropdown-item:focus {
+  background: rgba(255, 255, 255, 0.1) !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+}

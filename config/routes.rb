@@ -21,7 +21,6 @@ Rails.application.routes.draw do
     get 'offline', to: 'users#offline'
     get 'idle', to: 'users#idle'
     get 'absent', to: 'users#absent'
-    # get 'do not disturb', to: 'users#do_not_disturb'
   end
   get '/:username', to: 'users#show', as: 'profile'
 

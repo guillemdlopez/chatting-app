@@ -34,6 +34,9 @@ class ChatroomsController < ApplicationController
         end
     end
 
+    def search
+    end
+
     private
     
     def chatroom_params

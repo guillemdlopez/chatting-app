@@ -13,8 +13,10 @@
                 <% icon = "<i class='fas fa-music mr-2'></i>".html_safe %>
             <% when 'entertainment' %>
                 <% icon = "<i class='fas fa-tv mr-2'></i>".html_safe %>
-            <% else %>
+            <% when 'internet' %>
                 <% icon = '<i class="fas fa-mouse mr-2"></i>'.html_safe %>
+            <% when 'sport' %>
+                <% icon = '<i class="fas fa-volleyball-ball mr-2"></i>'.html_safe %>
         <% end %>
         <li class="category"><%= icon %><%= cat.capitalize %></li>
     <% end %>

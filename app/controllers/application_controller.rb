@@ -22,7 +22,7 @@ class ApplicationController < ActionController::Base
 
     def new_user_online
         users = User.all
-        new_user = nil
+        @new_user = nil
         users.each do |user|
             @new_user ||= user if user != current_user && is_online?(user)
         end

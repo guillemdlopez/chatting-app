@@ -13,8 +13,8 @@ $fa-font-path: "@fortawesome/fontawesome-free/webfonts";
 @import "@fortawesome/fontawesome-free/scss/v4-shims";
 
 // Internal styling
-@import "pages/index";
 @import "config/index";
+@import "pages/index";
 @import "components/index";
 
 @media (max-width: 414px) {
